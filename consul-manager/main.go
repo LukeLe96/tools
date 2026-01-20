@@ -1,6 +1,7 @@
 package main
 
 import (
+	"archive/zip"
 	"bufio"
 	"bytes"
 	"compress/gzip"
@@ -13,11 +14,13 @@ import (
 	"net/http"
 	"os"
 	"os/exec"
+	"os/signal"
 	"path/filepath"
 	"runtime"
 	"strconv"
 	"strings"
 	"sync"
+	"syscall"
 	"time"
 
 	"github.com/gorilla/websocket"
@@ -105,6 +108,7 @@ func main() {
 	http.HandleFunc("/api/helper/ports", gzipMiddleware(handleHelperPorts))
 	http.HandleFunc("/api/helper/kill", handleHelperKill)
     http.HandleFunc("/api/helper/scan-active", handleHelperScanActive)
+    http.HandleFunc("/api/consul/install", handleConsulInstall)
 	http.HandleFunc("/ws/logs", handleWebSocket)
 
 	// Try preferred port 9999 first
@@ -125,6 +129,35 @@ func main() {
 
 	// Auto open browser
 	openBrowser(url)
+
+	// Graceful Shutdown
+	c := make(chan os.Signal, 1)
+	signal.Notify(c, os.Interrupt, syscall.SIGTERM)
+	go func() {
+		<-c
+		fmt.Println("\n🔻 Shutting down Consul Manager...")
+
+		// 1. Kill all running local services
+		procMutex.Lock()
+		for name, cmd := range runningProcs {
+			if cmd.Process != nil {
+				fmt.Printf("🛑 Killing service: %s (PID: %d)\n", name, cmd.Process.Pid)
+				cmd.Process.Kill()
+			}
+		}
+		procMutex.Unlock()
+
+		// 2. Kill Consul Agent if we started it
+		consulMutex.Lock()
+		if consulCmd != nil && consulCmd.Process != nil {
+			fmt.Printf("🛑 Killing Consul Agent (PID: %d)\n", consulCmd.Process.Pid)
+			consulCmd.Process.Kill()
+		}
+		consulMutex.Unlock()
+
+		fmt.Println("👋 Bye!")
+		os.Exit(0)
+	}()
 
 	log.Fatal(http.Serve(listener, nil))
 }
@@ -358,6 +391,13 @@ func handleServiceMode(w http.ResponseWriter, r *http.Request) {
 		if config.Services[i].Name == req.Name {
 			s := &config.Services[i]
 
+			// Check dependency: Consul must be running for 'vps' or 'local'
+			if (req.Mode == "vps" || req.Mode == "local") && !isConsulRunning() {
+				broadcastError("CONSUL_REQUIRED", "Consul must be running to start services")
+				http.Error(w, "Consul must be running to start services", 400)
+				return
+			}
+
 			// Cleanup previous state
 			if s.Mode == "local" {
 				stopLocalService(s.Name)
@@ -568,6 +608,16 @@ func startLocalService(s Service) {
 		return
 	}
 
+    // Strict Port Management: Kill ANY process on the target port before starting
+    if s.LocalPort > 0 {
+        pid := getPIDForPort(s.LocalPort)
+        if pid != "" {
+            broadcastLog(fmt.Sprintf("🔪 Port %d in use by PID %s. Killing before start...", s.LocalPort, pid))
+            exec.Command("kill", "-9", pid).Run()
+            time.Sleep(500 * time.Millisecond) // Give it a moment to die
+        }
+    }
+
 	procMutex.Lock()
 	if _, ok := runningProcs[s.Name]; ok {
 		procMutex.Unlock()
@@ -666,6 +716,23 @@ func stopLocalService(name string) {
         broadcastLog(fmt.Sprintf("🛑 Stopping local service: %s...", name))
 		cmd.Process.Kill()
 	}
+
+    // Strict cleanup: Check port and kill if still running (or if not tracked)
+    var servicePort int
+    for _, s := range config.Services {
+        if s.Name == name {
+            servicePort = s.LocalPort
+            break
+        }
+    }
+
+    if servicePort > 0 {
+        pid := getPIDForPort(servicePort)
+        if pid != "" {
+             broadcastLog(fmt.Sprintf("🧹 Cleaning up port %d (PID %s) for service %s...", servicePort, pid, name))
+             exec.Command("kill", "-9", pid).Run()
+        }
+    }
 }
 
 func streamServiceLogs(name string, reader io.Reader) {
@@ -967,14 +1034,10 @@ func startConsul() {
 		return
 	}
 
-	// Check if Consul executable exists
-	path := config.ConsulPath
-	if _, err := exec.LookPath(path); err != nil {
-		// Try to verify if it is an absolute path
-		if _, err := os.Stat(path); err != nil {
-			broadcastError("CONSUL_NOT_FOUND", fmt.Sprintf("Executable not found: %s", path))
-			return
-		}
+	// Check if Consul executable exists and is valid
+	if err := validateConsulBinary(config.ConsulPath); err != nil {
+		broadcastError("CONSUL_BINARY_ERROR", fmt.Sprintf("Invalid Consul binary: %v", err))
+		return
 	}
 
 	consulCmd = exec.Command(config.ConsulPath, config.ConsulArgs...)
@@ -1403,6 +1466,180 @@ func handleHelperPorts(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(results)
+}
+
+func isConsulRunning() bool {
+    // 1. Check process
+    consulMutex.Lock()
+    running := consulCmd != nil && consulCmd.Process != nil
+    consulMutex.Unlock()
+
+    if running {
+        return true
+    }
+
+    // 2. Check API (fallback if running externally)
+    resp, err := http.Get("http://localhost:8500/v1/status/leader")
+    if err == nil && resp != nil && resp.StatusCode == 200 {
+        resp.Body.Close()
+        return true
+    }
+    return false
+}
+
+func handleConsulInstall(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "POST" {
+		http.Error(w, "Method not allowed", 405)
+		return
+	}
+
+	broadcastLog("🛠️ Starting Consul Auto-Fix...")
+	
+	// 1. Detect OS/Arch
+	osType := runtime.GOOS
+	arch := runtime.GOARCH
+	
+	if osType != "darwin" {
+		broadcastError("INSTALL_ERROR", "Auto-fix currently only supports macOS (darwin)")
+		return
+	}
+
+	version := "1.15.4" // Stable version
+	url := ""
+	if arch == "arm64" {
+		url = fmt.Sprintf("https://releases.hashicorp.com/consul/%s/consul_%s_darwin_arm64.zip", version, version)
+	} else {
+		url = fmt.Sprintf("https://releases.hashicorp.com/consul/%s/consul_%s_darwin_amd64.zip", version, version)
+	}
+
+	broadcastLog(fmt.Sprintf("⬇️ Downloading Consul %s for %s/%s...", version, osType, arch))
+	broadcastLog(fmt.Sprintf("🔗 URL: %s", url))
+
+	// 2. Download
+	resp, err := http.Get(url)
+	if err != nil {
+		broadcastError("DOWNLOAD_ERROR", fmt.Sprintf("Download failed: %v", err))
+		return
+	}
+	defer resp.Body.Close()
+
+	// Create temp zip file
+	tmpZip, err := os.CreateTemp("", "consul.zip")
+	if err != nil {
+		broadcastError("FS_ERROR", fmt.Sprintf("Failed to create temp file: %v", err))
+		return
+	}
+	defer os.Remove(tmpZip.Name())
+
+	_, err = io.Copy(tmpZip, resp.Body)
+	if err != nil {
+		broadcastError("DOWNLOAD_ERROR", fmt.Sprintf("Failed to write zip: %v", err))
+		return
+	}
+	tmpZip.Close()
+
+	// 3. Unzip and Install
+	broadcastLog("📦 Extracting...")
+	
+	// Determine install path (current directory or configured path)
+	installDir := filepath.Dir(config.ConsulPath)
+	if installDir == "." || installDir == "" {
+		wd, _ := os.Getwd()
+		installDir = wd
+	}
+	
+	targetPath := filepath.Join(installDir, "consul")
+	
+	if err := unzipAndInstall(tmpZip.Name(), installDir); err != nil {
+		broadcastError("INSTALL_ERROR", fmt.Sprintf("Extraction failed: %v", err))
+		return
+	}
+
+	// 4. Update Config
+	config.ConsulPath = targetPath
+	saveConfig()
+	
+	broadcastLog(fmt.Sprintf("✅ Consul installed successfully to: %s", targetPath))
+	broadcastLog("🚀 You can now start Consul!")
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(map[string]bool{"success": true})
+}
+
+func unzipAndInstall(src, dest string) error {
+    r, err := zip.OpenReader(src)
+    if err != nil {
+        return err
+    }
+    defer r.Close()
+
+    for _, f := range r.File {
+        if f.Name != "consul" {
+            continue
+        }
+
+        fpath := filepath.Join(dest, f.Name)
+        
+        // Check for ZipSlip (Directory traversal)
+        if !strings.HasPrefix(fpath, filepath.Clean(dest)+string(os.PathSeparator)) {
+            return fmt.Errorf("illegal file path: %s", fpath)
+        }
+
+        outFile, err := os.OpenFile(fpath, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, f.Mode())
+        if err != nil {
+            return err
+        }
+
+        rc, err := f.Open()
+        if err != nil {
+            outFile.Close()
+            return err
+        }
+
+        _, err = io.Copy(outFile, rc)
+
+        outFile.Close()
+        rc.Close()
+        
+        // Ensure executable permissions
+        os.Chmod(fpath, 0755)
+        return nil
+    }
+    return fmt.Errorf("consul binary not found in zip")
+}
+
+func validateConsulBinary(path string) error {
+    // 1. Check if file exists
+    info, err := os.Stat(path)
+    if err != nil {
+        // Try looking in PATH
+        resolved, err := exec.LookPath("consul")
+        if err == nil {
+            config.ConsulPath = resolved // Auto-fix path
+            return nil
+        }
+        return fmt.Errorf("Binary not found at %s and not in PATH", path)
+    }
+    
+    // 2. Check if executable
+    if info.Mode()&0111 == 0 {
+        return fmt.Errorf("File %s is not executable", path)
+    }
+
+    // 3. Check version/execution (catches OS mismatch)
+    cmd := exec.Command(path, "-version")
+    out, err := cmd.CombinedOutput()
+    if err != nil {
+        return fmt.Errorf("Failed to execute binary: %v. Output: %s", err, string(out))
+    }
+    
+    // Optional: Log version
+    lines := strings.Split(string(out), "\n")
+    if len(lines) > 0 {
+         broadcastLog(fmt.Sprintf("✓ Verified Consul Binary: %s", lines[0]))
+    }
+    
+    return nil
 }
 
 func getPIDForPort(port int) string {

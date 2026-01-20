@@ -1,0 +1,1177 @@
+2026-01-20 15:38:41 | Browserslist: caniuse-lite is outdated. Please run:
+2026-01-20 15:38:41 |   npx update-browserslist-db@latest
+2026-01-20 15:38:41 |   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+2026-01-20 15:38:47 | <w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/Users/leluke/Documents/Singalarity/GUIMF/bioblock/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!/Users/leluke/Documents/Singalarity/GUIMF/bioblock/node_modules/postcss-loader/dist/cjs.js!/Users/leluke/Documents/Singalarity/GUIMF/bioblock/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!/Users/leluke/Documents/Singalarity/GUIMF/bioblock/src/main/webapp/app/app.scss': No serializer registered for Warning
+2026-01-20 15:38:47 | <w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 7 items } -> webpack/lib/ModuleWarning -> Error -> Warning
+2026-01-20 15:39:07 | Note: Hibernate/JPA static Metamodel Generator 6.4.0.Final
+5:38:25 | > Task :webapp
+2026-01-20 15:38:25 | 
+2026-01-20 15:38:25 | > bioblock@0.0.1-SNAPSHOT webapp:build
+2026-01-20 15:38:25 | > npm run clean-www && npm run webapp:build:dev --
+2026-01-20 15:38:25 | 
+2026-01-20 15:38:26 | 
+2026-01-20 15:38:26 | > bioblock@0.0.1-SNAPSHOT clean-www
+2026-01-20 15:38:26 | > rimraf build/resources/main/static/
+2026-01-20 15:38:26 | 
+2026-01-20 15:38:27 | 
+2026-01-20 15:38:27 | > bioblock@0.0.1-SNAPSHOT webapp:build:dev
+2026-01-20 15:38:27 | > webpack --config webpack/webpack.dev.js --env stats=minimal
+2026-01-20 15:38:27 | 
+2026-01-20 15:38:30 | Webpack: Starting ...
+2026-01-20 15:38:30 | [2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:30 | 
+2026-01-20 15:38:30 |   ❯ Compile modules
+2026-01-20 15:38:31 | [2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:31 | 
+2026-01-20 15:38:31 |   ✔ Compile modules
+2026-01-20 15:38:31 |   ❯ Build modules (0%)
+2026-01-20 15:38:35 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:35 | 
+2026-01-20 15:38:35 |   ✔ Compile modules
+2026-01-20 15:38:35 |   ❯ Build modules (2%)
+2026-01-20 15:38:38 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:38 | 
+2026-01-20 15:38:38 |   ✔ Compile modules
+2026-01-20 15:38:38 |   ❯ Build modules (80%)
+2026-01-20 15:38:41 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:41 | 
+2026-01-20 15:38:41 |   ✔ Compile modules
+2026-01-20 15:38:41 |   ❯ Build modules (91%)
+2026-01-20 15:38:42 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:42 | 
+2026-01-20 15:38:42 |   ✔ Compile modules
+2026-01-20 15:38:42 |   ❯ Build modules (92%)
+2026-01-20 15:38:42 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:42 | 
+2026-01-20 15:38:42 |   ✔ Compile modules
+2026-01-20 15:38:42 |   ❯ Build modules (98%)
+2026-01-20 15:38:42 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:42 | 
+2026-01-20 15:38:42 |   ✔ Compile modules
+2026-01-20 15:38:42 |   ❯ Build modules (91%)
+2026-01-20 15:38:42 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:42 | 
+2026-01-20 15:38:42 |   ✔ Compile modules
+2026-01-20 15:38:42 |   ❯ Build modules (92%)
+2026-01-20 15:38:42 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:42 | 
+2026-01-20 15:38:42 |   ✔ Compile modules
+2026-01-20 15:38:42 |   ❯ Build modules (98%)
+2026-01-20 15:38:42 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:42 | 
+2026-01-20 15:38:42 |   ✔ Compile modules
+2026-01-20 15:38:42 |   ❯ Build modules (100%)
+2026-01-20 15:38:43 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:43 | 
+2026-01-20 15:38:43 |   ✔ Compile modules
+2026-01-20 15:38:43 |   ✔ Build modules
+2026-01-20 15:38:43 |   ❯ Optimize modules (-2%)
+2026-01-20 15:38:43 |     → Sealing ...
+2026-01-20 15:38:43 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:43 | 
+2026-01-20 15:38:43 |   ✔ Compile modules
+2026-01-20 15:38:43 |   ✔ Build modules
+2026-01-20 15:38:43 |   ❯ Optimize modules (1%)
+2026-01-20 15:38:43 |     → Sealing ...
+2026-01-20 15:38:43 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:43 | 
+2026-01-20 15:38:43 |   ✔ Compile modules
+2026-01-20 15:38:43 |   ✔ Build modules
+2026-01-20 15:38:43 |   ❯ Optimize modules (4%)
+2026-01-20 15:38:43 |     → Sealing ...
+2026-01-20 15:38:43 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:43 | 
+2026-01-20 15:38:43 |   ✔ Compile modules
+2026-01-20 15:38:43 |   ✔ Build modules
+2026-01-20 15:38:43 |   ❯ Optimize modules (7%)
+2026-01-20 15:38:43 |     → Sealing ...
+2026-01-20 15:38:43 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:43 | 
+2026-01-20 15:38:43 |   ✔ Compile modules
+2026-01-20 15:38:43 |   ✔ Build modules
+2026-01-20 15:38:43 |   ❯ Optimize modules (10%)
+2026-01-20 15:38:43 |     → Sealing ...
+2026-01-20 15:38:43 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:43 | 
+2026-01-20 15:38:43 |   ✔ Compile modules
+2026-01-20 15:38:43 |   ✔ Build modules
+2026-01-20 15:38:43 |   ❯ Optimize modules (12%)
+2026-01-20 15:38:43 |     → Sealing ...
+2026-01-20 15:38:43 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:43 | 
+2026-01-20 15:38:43 |   ✔ Compile modules
+2026-01-20 15:38:43 |   ✔ Build modules
+2026-01-20 15:38:43 |   ❯ Optimize modules (15%)
+2026-01-20 15:38:43 |     → Sealing ...
+2026-01-20 15:38:43 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:43 | 
+2026-01-20 15:38:43 |   ✔ Compile modules
+2026-01-20 15:38:43 |   ✔ Build modules
+2026-01-20 15:38:43 |   ❯ Optimize modules (18%)
+2026-01-20 15:38:43 |     → Sealing ...
+2026-01-20 15:38:43 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:43 | 
+2026-01-20 15:38:43 |   ✔ Compile modules
+2026-01-20 15:38:43 |   ✔ Build modules
+2026-01-20 15:38:43 |   ❯ Optimize modules (21%)
+2026-01-20 15:38:43 |     → Sealing ...
+2026-01-20 15:38:43 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:43 | 
+2026-01-20 15:38:43 |   ✔ Compile modules
+2026-01-20 15:38:43 |   ✔ Build modules
+2026-01-20 15:38:43 |   ❯ Optimize modules (24%)
+2026-01-20 15:38:43 |     → Sealing ...
+2026-01-20 15:38:43 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:43 | 
+2026-01-20 15:38:43 |   ✔ Compile modules
+2026-01-20 15:38:43 |   ✔ Build modules
+2026-01-20 15:38:43 |   ❯ Optimize modules (26%)
+2026-01-20 15:38:43 |     → Sealing ...
+2026-01-20 15:38:43 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:43 | 
+2026-01-20 15:38:43 |   ✔ Compile modules
+2026-01-20 15:38:43 |   ✔ Build modules
+2026-01-20 15:38:43 |   ❯ Optimize modules (29%)
+2026-01-20 15:38:43 |     → Sealing ...
+2026-01-20 15:38:43 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:43 | 
+2026-01-20 15:38:43 |   ✔ Compile modules
+2026-01-20 15:38:43 |   ✔ Build modules
+2026-01-20 15:38:43 |   ❯ Optimize modules (32%)
+2026-01-20 15:38:43 |     → Sealing ...
+2026-01-20 15:38:43 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:43 | 
+2026-01-20 15:38:43 |   ✔ Compile modules
+2026-01-20 15:38:43 |   ✔ Build modules
+2026-01-20 15:38:43 |   ❯ Optimize modules (35%)
+2026-01-20 15:38:43 |     → Sealing ...
+2026-01-20 15:38:43 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:43 | 
+2026-01-20 15:38:43 |   ✔ Compile modules
+2026-01-20 15:38:43 |   ✔ Build modules
+2026-01-20 15:38:43 |   ❯ Optimize modules (37%)
+2026-01-20 15:38:43 |     → Sealing ...
+2026-01-20 15:38:43 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:43 | 
+2026-01-20 15:38:43 |   ✔ Compile modules
+2026-01-20 15:38:43 |   ✔ Build modules
+2026-01-20 15:38:43 |   ❯ Optimize modules (40%)
+2026-01-20 15:38:43 |     → Sealing ...
+2026-01-20 15:38:43 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:43 | 
+2026-01-20 15:38:43 |   ✔ Compile modules
+2026-01-20 15:38:43 |   ✔ Build modules
+2026-01-20 15:38:43 |   ❯ Optimize modules (43%)
+2026-01-20 15:38:43 |     → Sealing ...
+2026-01-20 15:38:44 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:44 | 
+2026-01-20 15:38:44 |   ✔ Compile modules
+2026-01-20 15:38:44 |   ✔ Build modules
+2026-01-20 15:38:44 |   ❯ Optimize modules (46%)
+2026-01-20 15:38:44 |     → Sealing ...
+2026-01-20 15:38:44 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:44 | 
+2026-01-20 15:38:44 |   ✔ Compile modules
+2026-01-20 15:38:44 |   ✔ Build modules
+2026-01-20 15:38:44 |   ❯ Optimize modules (49%)
+2026-01-20 15:38:44 |     → Sealing ...
+2026-01-20 15:38:44 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:44 | 
+2026-01-20 15:38:44 |   ✔ Compile modules
+2026-01-20 15:38:44 |   ✔ Build modules
+2026-01-20 15:38:44 |   ❯ Optimize modules (51%)
+2026-01-20 15:38:44 |     → Sealing ...
+2026-01-20 15:38:44 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:44 | 
+2026-01-20 15:38:44 |   ✔ Compile modules
+2026-01-20 15:38:44 |   ✔ Build modules
+2026-01-20 15:38:44 |   ❯ Optimize modules (54%)
+2026-01-20 15:38:44 |     → Sealing ...
+2026-01-20 15:38:44 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:44 | 
+2026-01-20 15:38:44 |   ✔ Compile modules
+2026-01-20 15:38:44 |   ✔ Build modules
+2026-01-20 15:38:44 |   ❯ Optimize modules (57%)
+2026-01-20 15:38:44 |     → Sealing ...
+2026-01-20 15:38:44 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:44 | 
+2026-01-20 15:38:44 |   ✔ Compile modules
+2026-01-20 15:38:44 |   ✔ Build modules
+2026-01-20 15:38:44 |   ❯ Optimize modules (60%)
+2026-01-20 15:38:44 |     → Sealing ...
+2026-01-20 15:38:44 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:44 | 
+2026-01-20 15:38:44 |   ✔ Compile modules
+2026-01-20 15:38:44 |   ✔ Build modules
+2026-01-20 15:38:44 |   ❯ Optimize modules (63%)
+2026-01-20 15:38:44 |     → Sealing ...
+2026-01-20 15:38:44 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:44 | 
+2026-01-20 15:38:44 |   ✔ Compile modules
+2026-01-20 15:38:44 |   ✔ Build modules
+2026-01-20 15:38:44 |   ❯ Optimize modules (65%)
+2026-01-20 15:38:44 |     → Sealing ...
+2026-01-20 15:38:44 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:44 | 
+2026-01-20 15:38:44 |   ✔ Compile modules
+2026-01-20 15:38:44 |   ✔ Build modules
+2026-01-20 15:38:44 |   ❯ Optimize modules (68%)
+2026-01-20 15:38:44 |     → Sealing ...
+2026-01-20 15:38:44 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:44 | 
+2026-01-20 15:38:44 |   ✔ Compile modules
+2026-01-20 15:38:44 |   ✔ Build modules
+2026-01-20 15:38:44 |   ❯ Optimize modules (71%)
+2026-01-20 15:38:44 |     → Sealing ...
+2026-01-20 15:38:44 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:44 | 
+2026-01-20 15:38:44 |   ✔ Compile modules
+2026-01-20 15:38:44 |   ✔ Build modules
+2026-01-20 15:38:44 |   ❯ Optimize modules (74%)
+2026-01-20 15:38:44 |     → Sealing ...
+2026-01-20 15:38:44 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:44 | 
+2026-01-20 15:38:44 |   ✔ Compile modules
+2026-01-20 15:38:44 |   ✔ Build modules
+2026-01-20 15:38:44 |   ❯ Optimize modules (76%)
+2026-01-20 15:38:44 |     → Sealing ...
+2026-01-20 15:38:45 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:45 | 
+2026-01-20 15:38:45 |   ✔ Compile modules
+2026-01-20 15:38:45 |   ✔ Build modules
+2026-01-20 15:38:45 |   ❯ Optimize modules (79%)
+2026-01-20 15:38:45 |     → Sealing ...
+2026-01-20 15:38:45 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:45 | 
+2026-01-20 15:38:45 |   ✔ Compile modules
+2026-01-20 15:38:45 |   ✔ Build modules
+2026-01-20 15:38:45 |   ❯ Optimize modules (82%)
+2026-01-20 15:38:45 |     → Sealing ...
+2026-01-20 15:38:45 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:45 | 
+2026-01-20 15:38:45 |   ✔ Compile modules
+2026-01-20 15:38:45 |   ✔ Build modules
+2026-01-20 15:38:45 |   ❯ Optimize modules (85%)
+2026-01-20 15:38:45 |     → Sealing ...
+2026-01-20 15:38:45 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:45 | 
+2026-01-20 15:38:45 |   ✔ Compile modules
+2026-01-20 15:38:45 |   ✔ Build modules
+2026-01-20 15:38:45 |   ❯ Optimize modules (88%)
+2026-01-20 15:38:45 |     → Sealing ...
+2026-01-20 15:38:45 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:45 | 
+2026-01-20 15:38:45 |   ✔ Compile modules
+2026-01-20 15:38:45 |   ✔ Build modules
+2026-01-20 15:38:45 |   ❯ Optimize modules (90%)
+2026-01-20 15:38:45 |     → Sealing ...
+2026-01-20 15:38:45 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:45 | 
+2026-01-20 15:38:45 |   ✔ Compile modules
+2026-01-20 15:38:45 |   ✔ Build modules
+2026-01-20 15:38:45 |   ❯ Optimize modules (93%)
+2026-01-20 15:38:45 |     → Sealing ...
+2026-01-20 15:38:45 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:45 | 
+2026-01-20 15:38:45 |   ✔ Compile modules
+2026-01-20 15:38:45 |   ✔ Build modules
+2026-01-20 15:38:45 |   ❯ Optimize modules (96%)
+2026-01-20 15:38:45 |     → Sealing ...
+2026-01-20 15:38:45 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:45 | 
+2026-01-20 15:38:45 |   ✔ Compile modules
+2026-01-20 15:38:45 |   ✔ Build modules
+2026-01-20 15:38:45 |   ❯ Optimize modules (99%)
+2026-01-20 15:38:45 |     → Sealing ...
+2026-01-20 15:38:45 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:45 | 
+2026-01-20 15:38:45 |   ✔ Compile modules
+2026-01-20 15:38:45 |   ✔ Build modules
+2026-01-20 15:38:45 |   ❯ Optimize modules (102%)
+2026-01-20 15:38:45 |     → Sealing ...
+2026-01-20 15:38:47 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:47 | 
+2026-01-20 15:38:47 |   ✔ Compile modules
+2026-01-20 15:38:47 |   ✔ Build modules
+2026-01-20 15:38:47 |   ✔ Optimize modules
+2026-01-20 15:38:47 |   ❯ Emit files
+2026-01-20 15:38:47 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:47 | 
+2026-01-20 15:38:47 |   ✔ Compile modules
+2026-01-20 15:38:47 |   ✔ Build modules
+2026-01-20 15:38:47 |   ✔ Optimize modules
+2026-01-20 15:38:47 |   ✔ Emit files
+2026-01-20 15:38:47 | 
+2026-01-20 15:38:47 | Finished after 16.637 seconds.
+2026-01-20 15:38:47 | 
+2026-01-20 15:38:47 | Webpack: Starting ...
+2026-01-20 15:38:47 | [2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:47 | 
+2026-01-20 15:38:47 |   ✔ Compile modules
+2026-01-20 15:38:47 |   ✔ Build modules
+2026-01-20 15:38:47 |   ✔ Optimize modules
+2026-01-20 15:38:47 |   ❯ Emit files
+2026-01-20 15:38:47 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-20 15:38:47 | 
+2026-01-20 15:38:47 |   ✔ Compile modules
+2026-01-20 15:38:47 |   ✔ Build modules
+2026-01-20 15:38:47 |   ✔ Optimize modules
+2026-01-20 15:38:47 |   ✔ Emit files
+2026-01-20 15:38:47 | 
+2026-01-20 15:38:47 | Finished after 0.473 seconds.
+2026-01-20 15:38:47 | 
+2026-01-20 15:38:48 | 116 assets
+2026-01-20 15:38:48 | 12669 modules
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | WARNING in ./src/main/webapp/app/app.scss (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/main/webapp/app/app.scss)
+2026-01-20 15:38:48 | Module Warning (from ./node_modules/postcss-loader/dist/cjs.js):
+2026-01-20 15:38:48 | (3275:3) from "autoprefixer" plugin: Replace color-adjust to print-color-adjust. The color-adjust shorthand is currently deprecated.
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | Code:
+2026-01-20 15:38:48 |   color-adjust: exact
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | WARNING in ./src/main/webapp/app/app.scss (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/main/webapp/app/app.scss)
+2026-01-20 15:38:48 | Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+2026-01-20 15:38:48 | Deprecation Warning on line 301, column 30 of file:///Users/leluke/Documents/Singalarity/GUIMF/bioblock/node_modules/bootstrap/scss/_variables.scss:301:30:
+2026-01-20 15:38:48 | Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | Recommendation: math.div($spacer, 2) or calc($spacer / 2)
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | More info and automated migrator: https://sass-lang.com/d/slash-div
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | 301 | $headings-margin-bottom:      $spacer / 2 !default;
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | node_modules/bootstrap/scss/_variables.scss 302:31  @import
+2026-01-20 15:38:48 | node_modules/bootstrap/scss/bootstrap.scss 9:9      @import
+2026-01-20 15:38:48 | src/main/webapp/app/app.scss 4:9                    root stylesheet
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | WARNING in ./src/main/webapp/app/app.scss (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/main/webapp/app/app.scss)
+2026-01-20 15:38:48 | Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+2026-01-20 15:38:48 | Deprecation Warning on line 497, column 72 of file:///Users/leluke/Documents/Singalarity/GUIMF/bioblock/node_modules/bootstrap/scss/_variables.scss:497:72:
+2026-01-20 15:38:48 | Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | Recommendation: math.div($input-padding-y, 2) or calc($input-padding-y / 2)
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | More info and automated migrator: https://sass-lang.com/d/slash-div
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | 497 | $input-height-inner-quarter:            add($input-line-height * .25em, $input-padding-y / 2) !default;
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | node_modules/bootstrap/scss/_variables.scss 498:73  @import
+2026-01-20 15:38:48 | node_modules/bootstrap/scss/bootstrap.scss 9:9      @import
+2026-01-20 15:38:48 | src/main/webapp/app/app.scss 4:9                    root stylesheet
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | WARNING in ./src/main/webapp/app/app.scss (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/main/webapp/app/app.scss)
+2026-01-20 15:38:48 | Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+2026-01-20 15:38:48 | Deprecation Warning on line 567, column 48 of file:///Users/leluke/Documents/Singalarity/GUIMF/bioblock/node_modules/bootstrap/scss/_variables.scss:567:48:
+2026-01-20 15:38:48 | Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | Recommendation: math.div($custom-control-indicator-size, 2) or calc($custom-control-indicator-size / 2)
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | More info and automated migrator: https://sass-lang.com/d/slash-div
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | 567 | $custom-switch-indicator-border-radius:         $custom-control-indicator-size / 2 !default;
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | node_modules/bootstrap/scss/_variables.scss 568:49  @import
+2026-01-20 15:38:48 | node_modules/bootstrap/scss/bootstrap.scss 9:9      @import
+2026-01-20 15:38:48 | src/main/webapp/app/app.scss 4:9                    root stylesheet
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | WARNING in ./src/main/webapp/app/app.scss (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/main/webapp/app/app.scss)
+2026-01-20 15:38:48 | Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+2026-01-20 15:38:48 | Deprecation Warning on line 712, column 36 of file:///Users/leluke/Documents/Singalarity/GUIMF/bioblock/node_modules/bootstrap/scss/_variables.scss:712:36:
+2026-01-20 15:38:48 | Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | Recommendation: math.div($spacer, 2) or calc($spacer / 2)
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | More info and automated migrator: https://sass-lang.com/d/slash-div
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | 712 | $nav-divider-margin-y:              $spacer / 2 !default;
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | node_modules/bootstrap/scss/_variables.scss 713:37  @import
+2026-01-20 15:38:48 | node_modules/bootstrap/scss/bootstrap.scss 9:9      @import
+2026-01-20 15:38:48 | src/main/webapp/app/app.scss 4:9                    root stylesheet
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | WARNING in ./src/main/webapp/app/app.scss (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/main/webapp/app/app.scss)
+2026-01-20 15:38:48 | Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+2026-01-20 15:38:48 | Deprecation Warning on line 717, column 36 of file:///Users/leluke/Documents/Singalarity/GUIMF/bioblock/node_modules/bootstrap/scss/_variables.scss:717:36:
+2026-01-20 15:38:48 | Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | Recommendation: math.div($spacer, 2) or calc($spacer / 2)
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | More info and automated migrator: https://sass-lang.com/d/slash-div
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | 717 | $navbar-padding-y:                  $spacer / 2 !default;
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | node_modules/bootstrap/scss/_variables.scss 718:37  @import
+2026-01-20 15:38:48 | node_modules/bootstrap/scss/bootstrap.scss 9:9      @import
+2026-01-20 15:38:48 | src/main/webapp/app/app.scss 4:9                    root stylesheet
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | WARNING in ./src/main/webapp/app/app.scss (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/main/webapp/app/app.scss)
+2026-01-20 15:38:48 | Module Warning (from ./node_modules/sass-loader/dist/cjs.js):
+2026-01-20 15:38:48 | 64 repetitive deprecation warnings omitted.
+2026-01-20 15:38:48 | 
+2026-01-20 15:38:48 | webpack 5.89.0 compiled with 7 warnings in 16619 ms
+2026-01-20 15:38:58 | 
+2026-01-20 15:38:58 | > Task :processResources
+2026-01-20 15:39:07 | 
+2026-01-20 15:39:07 | > Task :compileJava
+2026-01-20 15:39:09 | 
+2026-01-20 15:39:09 | > Task :generateGitProperties
+2026-01-20 15:39:09 | > Task :classes
+2026-01-20 15:39:09 | > Task :resolveMainClassName
+2026-01-20 15:39:11 | 
+2026-01-20 15:39:11 | > Task :bootRun
+2026-01-20 15:39:11 | 15:39:11,366 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word crlf with class [com.singalarity.ekaasportal.bioblock.config.CRLFLogConverter]
+2026-01-20 15:39:11 | 15:39:11,371 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@300a28c6 - Adding [jar:file:/Users/leluke/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.1.5/c188015a5a79f5df65e876dcfdef16148c45fe2c/spring-boot-3.1.5.jar!/org/springframework/boot/logging/logback/defaults.xml] to configuration watch list.
+2026-01-20 15:39:11 | 15:39:11,371 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@46dee1c7 - URL [jar:file:/Users/leluke/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.1.5/c188015a5a79f5df65e876dcfdef16148c45fe2c/spring-boot-3.1.5.jar!/org/springframework/boot/logging/logback/defaults.xml] is not of type file
+2026-01-20 15:39:11 | 15:39:11,374 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word clr with class [org.springframework.boot.logging.logback.ColorConverter]
+2026-01-20 15:39:11 | 15:39:11,374 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word wex with class [org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter]
+2026-01-20 15:39:11 | 15:39:11,374 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word wEx with class [org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter]
+2026-01-20 15:39:11 | 15:39:11,375 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@300a28c6 - Adding [jar:file:/Users/leluke/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.1.5/c188015a5a79f5df65e876dcfdef16148c45fe2c/spring-boot-3.1.5.jar!/org/springframework/boot/logging/logback/console-appender.xml] to configuration watch list.
+2026-01-20 15:39:11 | 15:39:11,375 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@46dee1c7 - URL [jar:file:/Users/leluke/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.1.5/c188015a5a79f5df65e876dcfdef16148c45fe2c/spring-boot-3.1.5.jar!/org/springframework/boot/logging/logback/console-appender.xml] is not of type file
+2026-01-20 15:39:11 | 15:39:11,416 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Registering a new ReconfigureOnChangeTask ReconfigureOnChangeTask(born:1768898351414)
+2026-01-20 15:39:11 | 15:39:11,417 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - No 'scanPeriod' specified. Defaulting to 1 minutes
+2026-01-20 15:39:11 | 15:39:11,417 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Will scan for changes in [file:/Users/leluke/Documents/Singalarity/GUIMF/bioblock/build/resources/main/logback-spring.xml] 
+2026-01-20 15:39:11 | 15:39:11,417 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Setting ReconfigureOnChangeTask scanning period to 1 minutes
+2026-01-20 15:39:11 | 15:39:11,430 |-INFO in ch.qos.logback.classic.model.processor.LoggerContextListenerModelHandler - Adding LoggerContextListener of type [ch.qos.logback.classic.jul.LevelChangePropagator] to the object stack
+2026-01-20 15:39:11 | 15:39:11,432 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating DEBUG level on Logger[ROOT] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,432 |-INFO in ch.qos.logback.classic.model.processor.LoggerContextListenerModelHandler - Starting LoggerContextListener
+2026-01-20 15:39:11 | 15:39:11,433 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.catalina.startup.DigesterFactory] to ERROR
+2026-01-20 15:39:11 | 15:39:11,433 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating ERROR level on Logger[org.apache.catalina.startup.DigesterFactory] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,433 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating ERROR level on Logger[org.apache.catalina.startup.DigesterFactory] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,433 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.catalina.util.LifecycleBase] to ERROR
+2026-01-20 15:39:11 | 15:39:11,433 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating ERROR level on Logger[org.apache.catalina.util.LifecycleBase] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,433 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating ERROR level on Logger[org.apache.catalina.util.LifecycleBase] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,433 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.coyote.http11.Http11NioProtocol] to WARN
+2026-01-20 15:39:11 | 15:39:11,433 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[org.apache.coyote.http11.Http11NioProtocol] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,433 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[org.apache.coyote.http11.Http11NioProtocol] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,434 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.sshd.common.util.SecurityUtils] to WARN
+2026-01-20 15:39:11 | 15:39:11,434 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[org.apache.sshd.common.util.SecurityUtils] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,434 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[org.apache.sshd.common.util.SecurityUtils] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,434 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.tomcat.util.net.NioSelectorPool] to WARN
+2026-01-20 15:39:11 | 15:39:11,434 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[org.apache.tomcat.util.net.NioSelectorPool] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,434 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[org.apache.tomcat.util.net.NioSelectorPool] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,434 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.eclipse.jetty.util.component.AbstractLifeCycle] to ERROR
+2026-01-20 15:39:11 | 15:39:11,434 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating ERROR level on Logger[org.eclipse.jetty.util.component.AbstractLifeCycle] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,434 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating ERROR level on Logger[org.eclipse.jetty.util.component.AbstractLifeCycle] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,434 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate.validator.internal.util.Version] to WARN
+2026-01-20 15:39:11 | 15:39:11,434 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[org.hibernate.validator.internal.util.Version] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,434 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[org.hibernate.validator.internal.util.Version] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,434 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.boot.actuate.endpoint.jmx] to WARN
+2026-01-20 15:39:11 | 15:39:11,434 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[org.springframework.boot.actuate.endpoint.jmx] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,434 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[org.springframework.boot.actuate.endpoint.jmx] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-WARN in ch.qos.logback.core.model.processor.AppenderModelHandler - Appender named [CONSOLE] not referenced. Skipping further processing.
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [angus.activation] to WARN
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[angus.activation] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[angus.activation] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jakarta.activation] to WARN
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[jakarta.activation] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[jakarta.activation] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jakarta.mail] to WARN
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[jakarta.mail] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[jakarta.mail] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jakarta.management.remote] to WARN
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[jakarta.management.remote] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[jakarta.management.remote] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jakarta.xml.bind] to WARN
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[jakarta.xml.bind] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[jakarta.xml.bind] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jdk.event.security] to INFO
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating INFO level on Logger[jdk.event.security] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating INFO level on Logger[jdk.event.security] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [io.github.resilience4j] to INFO
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating INFO level on Logger[io.github.resilience4j] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating INFO level on Logger[io.github.resilience4j] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.hazelcast] to INFO
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating INFO level on Logger[com.hazelcast] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating INFO level on Logger[com.hazelcast] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.netflix] to WARN
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[com.netflix] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[com.netflix] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.netflix.config.sources.URLConfigurationSource] to ERROR
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating ERROR level on Logger[com.netflix.config.sources.URLConfigurationSource] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating ERROR level on Logger[com.netflix.config.sources.URLConfigurationSource] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.netflix.discovery] to INFO
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating INFO level on Logger[com.netflix.discovery] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating INFO level on Logger[com.netflix.discovery] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.ryantenney] to WARN
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[com.ryantenney] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[com.ryantenney] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.sun] to WARN
+2026-01-20 15:39:11 | 15:39:11,435 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[com.sun] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[com.sun] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.zaxxer] to WARN
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[com.zaxxer] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[com.zaxxer] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [io.undertow] to WARN
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[io.undertow] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[io.undertow] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [io.undertow.websockets.jsr] to ERROR
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating ERROR level on Logger[io.undertow.websockets.jsr] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating ERROR level on Logger[io.undertow.websockets.jsr] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache] to WARN
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[org.apache] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[org.apache] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.catalina.startup.DigesterFactory] to OFF
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating OFF level on Logger[org.apache.catalina.startup.DigesterFactory] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating OFF level on Logger[org.apache.catalina.startup.DigesterFactory] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.bson] to WARN
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[org.bson] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[org.bson] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate.validator] to WARN
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[org.hibernate.validator] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[org.hibernate.validator] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate] to WARN
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[org.hibernate] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[org.hibernate] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate.ejb.HibernatePersistence] to OFF
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating OFF level on Logger[org.hibernate.ejb.HibernatePersistence] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating OFF level on Logger[org.hibernate.ejb.HibernatePersistence] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework] to WARN
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[org.springframework] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[org.springframework] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.web] to WARN
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[org.springframework.web] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[org.springframework.web] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.security] to WARN
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[org.springframework.security] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[org.springframework.security] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.boot.autoconfigure.logging] to INFO
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating INFO level on Logger[org.springframework.boot.autoconfigure.logging] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,436 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating INFO level on Logger[org.springframework.boot.autoconfigure.logging] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.cache] to WARN
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[org.springframework.cache] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[org.springframework.cache] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.thymeleaf] to WARN
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[org.thymeleaf] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[org.thymeleaf] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.xnio] to WARN
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[org.xnio] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[org.xnio] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [io.swagger.v3] to INFO
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating INFO level on Logger[io.swagger.v3] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating INFO level on Logger[io.swagger.v3] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [sun.rmi] to WARN
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[sun.rmi] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[sun.rmi] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [sun.net.www] to INFO
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating INFO level on Logger[sun.net.www] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating INFO level on Logger[sun.net.www] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [sun.rmi.transport] to WARN
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[sun.rmi.transport] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[sun.rmi.transport] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [Validator] to INFO
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating INFO level on Logger[Validator] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating INFO level on Logger[Validator] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [_org.springframework.web.servlet.HandlerMapping.Mappings] to INFO
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating INFO level on Logger[_org.springframework.web.servlet.HandlerMapping.Mappings] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating INFO level on Logger[_org.springframework.web.servlet.HandlerMapping.Mappings] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [liquibase] to WARN
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating WARN level on Logger[liquibase] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating WARN level on Logger[liquibase] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [LiquibaseSchemaResolver] to INFO
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating INFO level on Logger[LiquibaseSchemaResolver] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating INFO level on Logger[LiquibaseSchemaResolver] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,437 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [jsonConsoleAppender]
+2026-01-20 15:39:11 | 15:39:11,438 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+2026-01-20 15:39:11 | 15:39:11,451 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.LoggingEventJsonProviders] for [providers] property
+2026-01-20 15:39:11 | 15:39:11,460 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.LoggingEventFormattedTimestampJsonProvider] for [timestamp] property
+2026-01-20 15:39:11 | 15:39:11,461 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.LogstashVersionJsonProvider] for [version] property
+2026-01-20 15:39:11 | 15:39:11,462 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.LogLevelJsonProvider] for [logLevel] property
+2026-01-20 15:39:11 | 15:39:11,463 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.MessageJsonProvider] for [message] property
+2026-01-20 15:39:11 | 15:39:11,463 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.LoggingEventThreadNameJsonProvider] for [threadName] property
+2026-01-20 15:39:11 | 15:39:11,463 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.ContextJsonProvider] for [context] property
+2026-01-20 15:39:11 | 15:39:11,465 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.LoggingEventPatternJsonProvider] for [pattern] property
+2026-01-20 15:39:11 | 15:39:11,466 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.MdcJsonProvider] for [mdc] property
+2026-01-20 15:39:11 | 15:39:11,467 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.StackTraceJsonProvider] for [stackTrace] property
+2026-01-20 15:39:11 | 15:39:11,701 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+2026-01-20 15:39:11 | 15:39:11,701 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@61593a71 - Propagating INFO level on Logger[ROOT] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,701 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@6f01d721 - Propagating INFO level on Logger[ROOT] onto the JUL framework
+2026-01-20 15:39:11 | 15:39:11,701 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [jsonConsoleAppender] to Logger[ROOT]
+2026-01-20 15:39:11 | 15:39:11,701 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@746284 - End of configuration.
+2026-01-20 15:39:11 | 15:39:11,702 |-INFO in org.springframework.boot.logging.logback.SpringBootJoranConfigurator@31156b94 - Registering current configuration as safe fallback point
+2026-01-20 15:39:11 | 
+2026-01-20 15:39:12 | 15:39:12,777 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word crlf with class [com.singalarity.ekaasportal.bioblock.config.CRLFLogConverter]
+2026-01-20 15:39:12 | 15:39:12,777 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@300a28c6 - Adding [jar:file:/Users/leluke/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.1.5/c188015a5a79f5df65e876dcfdef16148c45fe2c/spring-boot-3.1.5.jar!/org/springframework/boot/logging/logback/defaults.xml] to configuration watch list.
+2026-01-20 15:39:12 | 15:39:12,777 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@5b5db4ce - URL [jar:file:/Users/leluke/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.1.5/c188015a5a79f5df65e876dcfdef16148c45fe2c/spring-boot-3.1.5.jar!/org/springframework/boot/logging/logback/defaults.xml] is not of type file
+2026-01-20 15:39:12 | 15:39:12,779 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word clr with class [org.springframework.boot.logging.logback.ColorConverter]
+2026-01-20 15:39:12 | 15:39:12,779 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word wex with class [org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter]
+2026-01-20 15:39:12 | 15:39:12,779 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word wEx with class [org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter]
+2026-01-20 15:39:12 | 15:39:12,779 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@300a28c6 - Adding [jar:file:/Users/leluke/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.1.5/c188015a5a79f5df65e876dcfdef16148c45fe2c/spring-boot-3.1.5.jar!/org/springframework/boot/logging/logback/console-appender.xml] to configuration watch list.
+2026-01-20 15:39:12 | 15:39:12,779 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@5b5db4ce - URL [jar:file:/Users/leluke/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.1.5/c188015a5a79f5df65e876dcfdef16148c45fe2c/spring-boot-3.1.5.jar!/org/springframework/boot/logging/logback/console-appender.xml] is not of type file
+2026-01-20 15:39:12 | 15:39:12,783 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Registering a new ReconfigureOnChangeTask ReconfigureOnChangeTask(born:1768898352783)
+2026-01-20 15:39:12 | 15:39:12,783 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - No 'scanPeriod' specified. Defaulting to 1 minutes
+2026-01-20 15:39:12 | 15:39:12,783 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Will scan for changes in [file:/Users/leluke/Documents/Singalarity/GUIMF/bioblock/build/resources/main/logback-spring.xml] 
+2026-01-20 15:39:12 | 15:39:12,783 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Setting ReconfigureOnChangeTask scanning period to 1 minutes
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.model.processor.LoggerContextListenerModelHandler - Adding LoggerContextListener of type [ch.qos.logback.classic.jul.LevelChangePropagator] to the object stack
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [jakarta.mail] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.thymeleaf] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [jakarta.activation] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.hibernate] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.apache.sshd.common.util.SecurityUtils] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [io.swagger.v3] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [liquibase] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [com.hazelcast] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.hibernate.validator] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.apache.catalina.startup.DigesterFactory] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.springframework] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.bson] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [com.netflix] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [com.netflix.discovery] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.apache.coyote.http11.Http11NioProtocol] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.eclipse.jetty.util.component.AbstractLifeCycle] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.springframework.security] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.apache.catalina.util.LifecycleBase] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [io.github.resilience4j] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.springframework.web] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.springframework.boot.actuate.endpoint.jmx] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.springframework.boot.autoconfigure.logging] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [jakarta.management.remote] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [jdk.event.security] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.hibernate.ejb.HibernatePersistence] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.apache] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.xnio] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [sun.net.www] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [io.undertow.websockets.jsr] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [sun.rmi] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [com.sun] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [jakarta.xml.bind] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [_org.springframework.web.servlet.HandlerMapping.Mappings] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [LiquibaseSchemaResolver] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.apache.tomcat.util.net.NioSelectorPool] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.hibernate.validator.internal.util.Version] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [com.zaxxer] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [org.springframework.cache] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [com.netflix.config.sources.URLConfigurationSource] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [angus.activation] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [com.ryantenney] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [io.undertow] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [sun.rmi.transport] to null
+2026-01-20 15:39:12 | 15:39:12,784 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Setting level of jul logger [Validator] to null
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating DEBUG level on Logger[ROOT] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.model.processor.LoggerContextListenerModelHandler - Starting LoggerContextListener
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.catalina.startup.DigesterFactory] to ERROR
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating ERROR level on Logger[org.apache.catalina.startup.DigesterFactory] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating ERROR level on Logger[org.apache.catalina.startup.DigesterFactory] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.catalina.util.LifecycleBase] to ERROR
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating ERROR level on Logger[org.apache.catalina.util.LifecycleBase] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating ERROR level on Logger[org.apache.catalina.util.LifecycleBase] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.coyote.http11.Http11NioProtocol] to WARN
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[org.apache.coyote.http11.Http11NioProtocol] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[org.apache.coyote.http11.Http11NioProtocol] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.sshd.common.util.SecurityUtils] to WARN
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[org.apache.sshd.common.util.SecurityUtils] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[org.apache.sshd.common.util.SecurityUtils] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.tomcat.util.net.NioSelectorPool] to WARN
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[org.apache.tomcat.util.net.NioSelectorPool] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[org.apache.tomcat.util.net.NioSelectorPool] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.eclipse.jetty.util.component.AbstractLifeCycle] to ERROR
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating ERROR level on Logger[org.eclipse.jetty.util.component.AbstractLifeCycle] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating ERROR level on Logger[org.eclipse.jetty.util.component.AbstractLifeCycle] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate.validator.internal.util.Version] to WARN
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[org.hibernate.validator.internal.util.Version] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[org.hibernate.validator.internal.util.Version] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.boot.actuate.endpoint.jmx] to WARN
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[org.springframework.boot.actuate.endpoint.jmx] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[org.springframework.boot.actuate.endpoint.jmx] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-WARN in ch.qos.logback.core.model.processor.AppenderModelHandler - Appender named [CONSOLE] not referenced. Skipping further processing.
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [angus.activation] to WARN
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[angus.activation] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[angus.activation] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jakarta.activation] to WARN
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[jakarta.activation] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[jakarta.activation] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jakarta.mail] to WARN
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[jakarta.mail] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[jakarta.mail] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jakarta.management.remote] to WARN
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[jakarta.management.remote] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[jakarta.management.remote] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jakarta.xml.bind] to WARN
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[jakarta.xml.bind] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[jakarta.xml.bind] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jdk.event.security] to INFO
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating INFO level on Logger[jdk.event.security] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating INFO level on Logger[jdk.event.security] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [io.github.resilience4j] to INFO
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating INFO level on Logger[io.github.resilience4j] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating INFO level on Logger[io.github.resilience4j] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.hazelcast] to INFO
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating INFO level on Logger[com.hazelcast] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating INFO level on Logger[com.hazelcast] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.netflix] to WARN
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[com.netflix] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[com.netflix] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.netflix.config.sources.URLConfigurationSource] to ERROR
+2026-01-20 15:39:12 | 15:39:12,785 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating ERROR level on Logger[com.netflix.config.sources.URLConfigurationSource] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating ERROR level on Logger[com.netflix.config.sources.URLConfigurationSource] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.netflix.discovery] to INFO
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating INFO level on Logger[com.netflix.discovery] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating INFO level on Logger[com.netflix.discovery] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.ryantenney] to WARN
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[com.ryantenney] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[com.ryantenney] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.sun] to WARN
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[com.sun] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[com.sun] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.zaxxer] to WARN
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[com.zaxxer] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[com.zaxxer] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [io.undertow] to WARN
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[io.undertow] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[io.undertow] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [io.undertow.websockets.jsr] to ERROR
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating ERROR level on Logger[io.undertow.websockets.jsr] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating ERROR level on Logger[io.undertow.websockets.jsr] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache] to WARN
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[org.apache] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[org.apache] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.catalina.startup.DigesterFactory] to OFF
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating OFF level on Logger[org.apache.catalina.startup.DigesterFactory] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating OFF level on Logger[org.apache.catalina.startup.DigesterFactory] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.bson] to WARN
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[org.bson] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[org.bson] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate.validator] to WARN
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[org.hibernate.validator] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[org.hibernate.validator] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate] to WARN
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[org.hibernate] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[org.hibernate] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate.ejb.HibernatePersistence] to OFF
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating OFF level on Logger[org.hibernate.ejb.HibernatePersistence] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating OFF level on Logger[org.hibernate.ejb.HibernatePersistence] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework] to WARN
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[org.springframework] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[org.springframework] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.web] to WARN
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[org.springframework.web] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[org.springframework.web] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.security] to WARN
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[org.springframework.security] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[org.springframework.security] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.boot.autoconfigure.logging] to INFO
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating INFO level on Logger[org.springframework.boot.autoconfigure.logging] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating INFO level on Logger[org.springframework.boot.autoconfigure.logging] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.cache] to WARN
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[org.springframework.cache] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[org.springframework.cache] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.thymeleaf] to WARN
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[org.thymeleaf] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[org.thymeleaf] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.xnio] to WARN
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[org.xnio] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[org.xnio] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [io.swagger.v3] to INFO
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating INFO level on Logger[io.swagger.v3] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating INFO level on Logger[io.swagger.v3] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [sun.rmi] to WARN
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[sun.rmi] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[sun.rmi] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [sun.net.www] to INFO
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating INFO level on Logger[sun.net.www] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating INFO level on Logger[sun.net.www] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [sun.rmi.transport] to WARN
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[sun.rmi.transport] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[sun.rmi.transport] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [Validator] to INFO
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating INFO level on Logger[Validator] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating INFO level on Logger[Validator] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [_org.springframework.web.servlet.HandlerMapping.Mappings] to INFO
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating INFO level on Logger[_org.springframework.web.servlet.HandlerMapping.Mappings] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating INFO level on Logger[_org.springframework.web.servlet.HandlerMapping.Mappings] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [liquibase] to WARN
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating WARN level on Logger[liquibase] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating WARN level on Logger[liquibase] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [LiquibaseSchemaResolver] to INFO
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@584e2f3e - Propagating INFO level on Logger[LiquibaseSchemaResolver] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@601a308a - Propagating INFO level on Logger[LiquibaseSchemaResolver] onto the JUL framework
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [jsonConsoleAppender]
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+2026-01-20 15:39:12 | 15:39:12,786 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.LoggingEventJsonProviders] for [providers] property
+2026-01-20 15:39:12 | 15:39:12,787 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.LoggingEventFormattedTimestampJsonProvider] for [timestamp] property
+2026-01-20 15:39:12 | 15:39:12,787 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.LogstashVersionJsonProvider] for [version] property
+2026-01-20 15:39:12 | 15:39:12,787 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.LogLevelJsonProvider] for [logLevel] property
+2026-01-20 15:39:12 | 15:39:12,787 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.MessageJsonProvider] for [message] property
+2026-01-20 15:39:12 | 15:39:12,787 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.LoggingEventThreadNameJsonProvider] for [threadName] property
+2026-01-20 15:39:12 | 15:39:12,787 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.ContextJsonProvider] for [context] property
+2026-01-20 15:39:12 | 15:39:12,787 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.LoggingEventPatternJsonProvider] for [pattern] property
+2026-01-20 15:39:12 | 15:39:12,787 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.MdcJsonProvider] for [mdc] property
+2026-01-20 15:39:12 | 15:39:12,788 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.StackTraceJsonProvider] for [stackTrace] property
+2026-01-20 15:39:12 | 15:39:12,790 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to DEBUG
+2026-01-20 15:39:12 | 15:39:12,790 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [jsonConsoleAppender] to Logger[ROOT]
+2026-01-20 15:39:12 | 15:39:12,790 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@4ba49c41 - End of configuration.
+2026-01-20 15:39:12 | 15:39:12,790 |-INFO in org.springframework.boot.logging.logback.SpringBootJoranConfigurator@7d69aa3f - Registering current configuration as safe fallback point
+2026-01-20 15:39:12 | 
+2026-01-20 15:39:12 | 
+2026-01-20 15:39:12 |   [32m      ██╗[36m ██╗   ██╗ ████████╗ ███████╗   ██████╗ ████████╗ ████████╗ ███████╗
+2026-01-20 15:39:12 |   [32m      ██║[36m ██║   ██║ ╚══██╔══╝ ██╔═══██╗ ██╔════╝ ╚══██╔══╝ ██╔═════╝ ██╔═══██╗
+2026-01-20 15:39:12 |   [32m      ██║[36m ████████║    ██║    ███████╔╝ ╚█████╗     ██║    ██████╗   ███████╔╝
+2026-01-20 15:39:12 |   [32m██╗   ██║[36m ██╔═══██║    ██║    ██╔════╝   ╚═══██╗    ██║    ██╔═══╝   ██╔══██║
+2026-01-20 15:39:12 |   [32m╚██████╔╝[36m ██║   ██║ ████████╗ ██║       ██████╔╝    ██║    ████████╗ ██║  ╚██╗
+2026-01-20 15:39:12 |   [32m ╚═════╝ [36m ╚═╝   ╚═╝ ╚═══════╝ ╚═╝       ╚═════╝     ╚═╝    ╚═══════╝ ╚═╝   ╚═╝
+2026-01-20 15:39:12 | 
+2026-01-20 15:39:12 | [94m:: JHipster 🤓  :: Running Spring Boot 3.1.5 :: Startup profile(s) dev ::
+2026-01-20 15:39:12 | :: https://www.jhipster.tech ::[39m
+2026-01-20 15:39:12 | 
+2026-01-20 15:39:13 | 15:39:12,909 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word crlf with class [com.singalarity.ekaasportal.bioblock.config.CRLFLogConverter]
+2026-01-20 15:39:13 | 15:39:12,909 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@300a28c6 - Adding [jar:file:/Users/leluke/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.1.5/c188015a5a79f5df65e876dcfdef16148c45fe2c/spring-boot-3.1.5.jar!/org/springframework/boot/logging/logback/defaults.xml] to configuration watch list.
+2026-01-20 15:39:13 | 15:39:12,909 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@16b94211 - URL [jar:file:/Users/leluke/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.1.5/c188015a5a79f5df65e876dcfdef16148c45fe2c/spring-boot-3.1.5.jar!/org/springframework/boot/logging/logback/defaults.xml] is not of type file
+2026-01-20 15:39:13 | 15:39:12,911 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word clr with class [org.springframework.boot.logging.logback.ColorConverter]
+2026-01-20 15:39:13 | 15:39:12,911 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word wex with class [org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter]
+2026-01-20 15:39:13 | 15:39:12,911 |-INFO in ch.qos.logback.core.joran.action.ConversionRuleAction - registering conversion word wEx with class [org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter]
+2026-01-20 15:39:13 | 15:39:12,911 |-INFO in ch.qos.logback.core.joran.util.ConfigurationWatchListUtil@300a28c6 - Adding [jar:file:/Users/leluke/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.1.5/c188015a5a79f5df65e876dcfdef16148c45fe2c/spring-boot-3.1.5.jar!/org/springframework/boot/logging/logback/console-appender.xml] to configuration watch list.
+2026-01-20 15:39:13 | 15:39:12,911 |-INFO in ch.qos.logback.core.joran.spi.ConfigurationWatchList@16b94211 - URL [jar:file:/Users/leluke/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/3.1.5/c188015a5a79f5df65e876dcfdef16148c45fe2c/spring-boot-3.1.5.jar!/org/springframework/boot/logging/logback/console-appender.xml] is not of type file
+2026-01-20 15:39:13 | 15:39:12,916 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Registering a new ReconfigureOnChangeTask ReconfigureOnChangeTask(born:1768898352916)
+2026-01-20 15:39:13 | 15:39:12,916 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - No 'scanPeriod' specified. Defaulting to 1 minutes
+2026-01-20 15:39:13 | 15:39:12,916 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Will scan for changes in [file:/Users/leluke/Documents/Singalarity/GUIMF/bioblock/build/resources/main/logback-spring.xml] 
+2026-01-20 15:39:13 | 15:39:12,916 |-INFO in ch.qos.logback.classic.model.processor.ConfigurationModelHandlerFull - Setting ReconfigureOnChangeTask scanning period to 1 minutes
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.model.processor.LoggerContextListenerModelHandler - Adding LoggerContextListener of type [ch.qos.logback.classic.jul.LevelChangePropagator] to the object stack
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [jakarta.mail] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.thymeleaf] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [jakarta.activation] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.hibernate] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.apache.sshd.common.util.SecurityUtils] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [io.swagger.v3] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [liquibase] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [com.hazelcast] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.hibernate.validator] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.apache.catalina.startup.DigesterFactory] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.springframework] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.bson] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [com.netflix] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [com.netflix.discovery] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.apache.coyote.http11.Http11NioProtocol] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.eclipse.jetty.util.component.AbstractLifeCycle] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.springframework.security] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.apache.catalina.util.LifecycleBase] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [io.github.resilience4j] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.springframework.web] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.springframework.boot.actuate.endpoint.jmx] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.springframework.boot.autoconfigure.logging] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [jakarta.management.remote] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [jdk.event.security] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.hibernate.ejb.HibernatePersistence] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.springframework.security.web] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.apache] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.xnio] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [sun.net.www] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [tech.jhipster] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [io.undertow.websockets.jsr] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [sun.rmi] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [com.sun] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [com.singalarity.ekaasportal.bioblock] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.hibernate.SQL] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [jakarta.xml.bind] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [_org.springframework.web.servlet.HandlerMapping.Mappings] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [LiquibaseSchemaResolver] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.apache.tomcat.util.net.NioSelectorPool] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.hibernate.validator.internal.util.Version] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [com.zaxxer] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [org.springframework.cache] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [com.netflix.config.sources.URLConfigurationSource] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [angus.activation] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [com.ryantenney] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [io.undertow] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [sun.rmi.transport] to null
+2026-01-20 15:39:13 | 15:39:12,917 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Setting level of jul logger [Validator] to null
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating DEBUG level on Logger[ROOT] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerContextListenerModelHandler - Starting LoggerContextListener
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.catalina.startup.DigesterFactory] to ERROR
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating ERROR level on Logger[org.apache.catalina.startup.DigesterFactory] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating ERROR level on Logger[org.apache.catalina.startup.DigesterFactory] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.catalina.util.LifecycleBase] to ERROR
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating ERROR level on Logger[org.apache.catalina.util.LifecycleBase] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating ERROR level on Logger[org.apache.catalina.util.LifecycleBase] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.coyote.http11.Http11NioProtocol] to WARN
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[org.apache.coyote.http11.Http11NioProtocol] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[org.apache.coyote.http11.Http11NioProtocol] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.sshd.common.util.SecurityUtils] to WARN
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[org.apache.sshd.common.util.SecurityUtils] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[org.apache.sshd.common.util.SecurityUtils] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.tomcat.util.net.NioSelectorPool] to WARN
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[org.apache.tomcat.util.net.NioSelectorPool] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[org.apache.tomcat.util.net.NioSelectorPool] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.eclipse.jetty.util.component.AbstractLifeCycle] to ERROR
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating ERROR level on Logger[org.eclipse.jetty.util.component.AbstractLifeCycle] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating ERROR level on Logger[org.eclipse.jetty.util.component.AbstractLifeCycle] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate.validator.internal.util.Version] to WARN
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[org.hibernate.validator.internal.util.Version] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[org.hibernate.validator.internal.util.Version] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.boot.actuate.endpoint.jmx] to WARN
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[org.springframework.boot.actuate.endpoint.jmx] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[org.springframework.boot.actuate.endpoint.jmx] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-WARN in ch.qos.logback.core.model.processor.AppenderModelHandler - Appender named [CONSOLE] not referenced. Skipping further processing.
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [angus.activation] to WARN
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[angus.activation] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[angus.activation] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jakarta.activation] to WARN
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[jakarta.activation] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[jakarta.activation] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jakarta.mail] to WARN
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[jakarta.mail] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[jakarta.mail] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jakarta.management.remote] to WARN
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[jakarta.management.remote] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[jakarta.management.remote] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jakarta.xml.bind] to WARN
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[jakarta.xml.bind] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[jakarta.xml.bind] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [jdk.event.security] to INFO
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating INFO level on Logger[jdk.event.security] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating INFO level on Logger[jdk.event.security] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [io.github.resilience4j] to INFO
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating INFO level on Logger[io.github.resilience4j] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating INFO level on Logger[io.github.resilience4j] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.hazelcast] to INFO
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating INFO level on Logger[com.hazelcast] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating INFO level on Logger[com.hazelcast] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.netflix] to WARN
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[com.netflix] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[com.netflix] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.netflix.config.sources.URLConfigurationSource] to ERROR
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating ERROR level on Logger[com.netflix.config.sources.URLConfigurationSource] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating ERROR level on Logger[com.netflix.config.sources.URLConfigurationSource] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.netflix.discovery] to INFO
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating INFO level on Logger[com.netflix.discovery] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating INFO level on Logger[com.netflix.discovery] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.ryantenney] to WARN
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[com.ryantenney] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[com.ryantenney] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.sun] to WARN
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[com.sun] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[com.sun] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.zaxxer] to WARN
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[com.zaxxer] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[com.zaxxer] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [io.undertow] to WARN
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[io.undertow] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[io.undertow] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [io.undertow.websockets.jsr] to ERROR
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating ERROR level on Logger[io.undertow.websockets.jsr] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating ERROR level on Logger[io.undertow.websockets.jsr] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache] to WARN
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[org.apache] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[org.apache] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.catalina.startup.DigesterFactory] to OFF
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating OFF level on Logger[org.apache.catalina.startup.DigesterFactory] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating OFF level on Logger[org.apache.catalina.startup.DigesterFactory] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.bson] to WARN
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[org.bson] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[org.bson] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate.validator] to WARN
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[org.hibernate.validator] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[org.hibernate.validator] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate] to WARN
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[org.hibernate] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[org.hibernate] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.hibernate.ejb.HibernatePersistence] to OFF
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating OFF level on Logger[org.hibernate.ejb.HibernatePersistence] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating OFF level on Logger[org.hibernate.ejb.HibernatePersistence] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,918 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework] to WARN
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[org.springframework] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[org.springframework] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.web] to WARN
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[org.springframework.web] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[org.springframework.web] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.security] to WARN
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[org.springframework.security] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[org.springframework.security] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.boot.autoconfigure.logging] to INFO
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating INFO level on Logger[org.springframework.boot.autoconfigure.logging] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating INFO level on Logger[org.springframework.boot.autoconfigure.logging] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.springframework.cache] to WARN
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[org.springframework.cache] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[org.springframework.cache] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.thymeleaf] to WARN
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[org.thymeleaf] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[org.thymeleaf] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.xnio] to WARN
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[org.xnio] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[org.xnio] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [io.swagger.v3] to INFO
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating INFO level on Logger[io.swagger.v3] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating INFO level on Logger[io.swagger.v3] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [sun.rmi] to WARN
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[sun.rmi] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[sun.rmi] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [sun.net.www] to INFO
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating INFO level on Logger[sun.net.www] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating INFO level on Logger[sun.net.www] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [sun.rmi.transport] to WARN
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[sun.rmi.transport] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[sun.rmi.transport] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [Validator] to INFO
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating INFO level on Logger[Validator] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating INFO level on Logger[Validator] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [_org.springframework.web.servlet.HandlerMapping.Mappings] to INFO
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating INFO level on Logger[_org.springframework.web.servlet.HandlerMapping.Mappings] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating INFO level on Logger[_org.springframework.web.servlet.HandlerMapping.Mappings] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [liquibase] to WARN
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating WARN level on Logger[liquibase] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating WARN level on Logger[liquibase] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [LiquibaseSchemaResolver] to INFO
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@320ce757 - Propagating INFO level on Logger[LiquibaseSchemaResolver] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.classic.jul.LevelChangePropagator@dd9b2f5 - Propagating INFO level on Logger[LiquibaseSchemaResolver] onto the JUL framework
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [jsonConsoleAppender]
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.LoggingEventJsonProviders] for [providers] property
+2026-01-20 15:39:13 | 15:39:12,919 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.LoggingEventFormattedTimestampJsonProvider] for [timestamp] property
+2026-01-20 15:39:13 | 15:39:12,920 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.LogstashVersionJsonProvider] for [version] property
+2026-01-20 15:39:13 | 15:39:12,920 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.LogLevelJsonProvider] for [logLevel] property
+2026-01-20 15:39:13 | 15:39:12,920 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.MessageJsonProvider] for [message] property
+2026-01-20 15:39:13 | 15:39:12,920 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.LoggingEventThreadNameJsonProvider] for [threadName] property
+2026-01-20 15:39:13 | 15:39:12,920 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.ContextJsonProvider] for [context] property
+2026-01-20 15:39:13 | 15:39:12,920 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.LoggingEventPatternJsonProvider] for [pattern] property
+2026-01-20 15:39:13 | 15:39:12,920 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.MdcJsonProvider] for [mdc] property
+2026-01-20 15:39:13 | 15:39:12,921 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [net.logstash.logback.composite.loggingevent.StackTraceJsonProvider] for [stackTrace] property
+2026-01-20 15:39:13 | 15:39:12,923 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to DEBUG
+2026-01-20 15:39:13 | 15:39:12,923 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [jsonConsoleAppender] to Logger[ROOT]
+2026-01-20 15:39:13 | 15:39:12,923 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@386cd8fa - End of configuration.
+2026-01-20 15:39:13 | 15:39:12,923 |-INFO in org.springframework.boot.logging.logback.SpringBootJoranConfigurator@6419ac2c - Registering current configuration as safe fallback point
+2026-01-20 15:39:13 | 
+2026-01-20 15:39:13 | {"@timestamp":"2026-01-20T08:39:12.935448Z","@version":"1","level":"INFO","message":"The following 3 profiles are active: \"no-liquibase\", \"api-docs\", \"dev\"","thread_name":"restartedMain"}
+2026-01-20 15:39:16 | {"@timestamp":"2026-01-20T08:39:16.033993Z","@version":"1","level":"INFO","message":"Web application configuration, using profiles: no-liquibase","thread_name":"restartedMain"}
+2026-01-20 15:39:16 | {"@timestamp":"2026-01-20T08:39:16.035943Z","@version":"1","level":"INFO","message":"Web application fully configured","thread_name":"restartedMain"}
+2026-01-20 15:39:16 | {"@timestamp":"2026-01-20T08:39:16.088648Z","@version":"1","level":"DEBUG","message":"Creating Async Task Executor","thread_name":"restartedMain"}
+2026-01-20 15:39:16 | {"@timestamp":"2026-01-20T08:39:16.202322Z","@version":"1","level":"DEBUG","message":"Liquibase is disabled","thread_name":"restartedMain"}
+2026-01-20 15:39:16 | {"@timestamp":"2026-01-20T08:39:16.407744Z","@version":"1","level":"DEBUG","message":"Configuring Hazelcast","thread_name":"restartedMain"}
+2026-01-20 15:39:16 | {"@timestamp":"2026-01-20T08:39:16.422666Z","@version":"1","level":"WARN","message":"Hazelcast is starting in a Java modular environment (Java 9 and newer) but without proper access to required Java packages. Use additional Java arguments to provide Hazelcast access to Java internal API. The internal API access is used to get the best performance results. Arguments to be used:\n --add-modules java.se --add-exports java.base/jdk.internal.ref=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.management/sun.management=ALL-UNNAMED --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED","thread_name":"restartedMain"}
+2026-01-20 15:39:16 | {"@timestamp":"2026-01-20T08:39:16.454033Z","@version":"1","level":"DEBUG","message":"Configuring Hazelcast clustering for instanceId: bioblock","thread_name":"restartedMain"}
+2026-01-20 15:39:16 | {"@timestamp":"2026-01-20T08:39:16.454263Z","@version":"1","level":"DEBUG","message":"Application is running with the \"dev\" profile, Hazelcast cluster will only work with localhost instances","thread_name":"restartedMain"}
+2026-01-20 15:39:16 | {"@timestamp":"2026-01-20T08:39:16.575947Z","@version":"1","level":"INFO","message":"[LOCAL] [dev] [5.3.5] Interfaces is disabled, trying to pick one address from TCP-IP config addresses: []","thread_name":"restartedMain"}
+2026-01-20 15:39:16 | {"@timestamp":"2026-01-20T08:39:16.576362Z","@version":"1","level":"WARN","message":"[LOCAL] [dev] [5.3.5] Could not find a matching address to start with! Picking one of non-loopback addresses.","thread_name":"restartedMain"}
+2026-01-20 15:39:16 | {"@timestamp":"2026-01-20T08:39:16.621129Z","@version":"1","level":"INFO","message":"[100.111.251.187]:33803 [dev] [5.3.5] \n\t+       +  o    o     o     o---o o----o o      o---o     o     o----o o--o--o\n\t+ +   + +  |    |    / \\       /  |      |     /         / \\    |         |   \n\t+ + + + +  o----o   o   o     o   o----o |    o         o   o   o----o    |   \n\t+ +   + +  |    |  /     \\   /    |      |     \\       /     \\       |    |   \n\t+       +  o    o o       o o---o o----o o----o o---o o       o o----o    o   ","thread_name":"restartedMain"}
+2026-01-20 15:39:16 | {"@timestamp":"2026-01-20T08:39:16.621324Z","@version":"1","level":"INFO","message":"[100.111.251.187]:33803 [dev] [5.3.5] Copyright (c) 2008-2023, Hazelcast, Inc. All Rights Reserved.","thread_name":"restartedMain"}
+2026-01-20 15:39:16 | {"@timestamp":"2026-01-20T08:39:16.62152Z","@version":"1","level":"INFO","message":"[100.111.251.187]:33803 [dev] [5.3.5] Hazelcast Platform 5.3.5 (20231024 - 0a8cc63) starting at [100.111.251.187]:33803","thread_name":"restartedMain"}
+2026-01-20 15:39:16 | {"@timestamp":"2026-01-20T08:39:16.621729Z","@version":"1","level":"INFO","message":"[100.111.251.187]:33803 [dev] [5.3.5] Cluster name: dev","thread_name":"restartedMain"}
+2026-01-20 15:39:16 | {"@timestamp":"2026-01-20T08:39:16.621878Z","@version":"1","level":"INFO","message":"[100.111.251.187]:33803 [dev] [5.3.5] Integrity Checker is disabled. Fail-fast on corrupted executables will not be performed. For more information, see the documentation for Integrity Checker.","thread_name":"restartedMain"}
+2026-01-20 15:39:16 | {"@timestamp":"2026-01-20T08:39:16.624411Z","@version":"1","level":"INFO","message":"[100.111.251.187]:33803 [dev] [5.3.5] The Jet engine is disabled.\nTo enable the Jet engine on the members, do one of the following:\n  - Change member config using Java API: config.getJetConfig().setEnabled(true)\n  - Change XML/YAML configuration property: Set hazelcast.jet.enabled to true\n  - Add system property: -Dhz.jet.enabled=true (for Hazelcast embedded, works only when loading config via Config.load)\n  - Add environment variable: HZ_JET_ENABLED=true (recommended when running container image. For Hazelcast embedded, works only when loading config via Config.load)","thread_name":"restartedMain"}
+2026-01-20 15:39:16 | {"@timestamp":"2026-01-20T08:39:16.849239Z","@version":"1","level":"INFO","message":"[100.111.251.187]:33803 [dev] [5.3.5] TPC: disabled","thread_name":"restartedMain"}
+2026-01-20 15:39:17 | {"@timestamp":"2026-01-20T08:39:17.194658Z","@version":"1","level":"INFO","message":"[100.111.251.187]:33803 [dev] [5.3.5] Enable DEBUG/FINE log level for log category com.hazelcast.system.security  or use -Dhazelcast.security.recommendations system property to see \uD83D\uDD12 security recommendations and the status of current config.","thread_name":"restartedMain"}
+2026-01-20 15:39:17 | {"@timestamp":"2026-01-20T08:39:17.280689Z","@version":"1","level":"INFO","message":"[100.111.251.187]:33803 [dev] [5.3.5] Using TCP/IP discovery","thread_name":"restartedMain"}
+2026-01-20 15:39:17 | {"@timestamp":"2026-01-20T08:39:17.282009Z","@version":"1","level":"WARN","message":"[100.111.251.187]:33803 [dev] [5.3.5] CP Subsystem is not enabled. CP data structures will operate in UNSAFE mode! Please note that UNSAFE mode will not provide strong consistency guarantees.","thread_name":"restartedMain"}
+2026-01-20 15:39:17 | {"@timestamp":"2026-01-20T08:39:17.589404Z","@version":"1","level":"INFO","message":"[100.111.251.187]:33803 [dev] [5.3.5] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.","thread_name":"restartedMain"}
+2026-01-20 15:39:17 | {"@timestamp":"2026-01-20T08:39:17.593373Z","@version":"1","level":"INFO","message":"[100.111.251.187]:33803 [dev] [5.3.5] [100.111.251.187]:33803 is STARTING","thread_name":"restartedMain"}
+2026-01-20 15:39:17 | {"@timestamp":"2026-01-20T08:39:17.617199Z","@version":"1","level":"INFO","message":"[100.111.251.187]:33803 [dev] [5.3.5] \n\nMembers {size:1, ver:1} [\n\tMember [100.111.251.187]:33803 - a528e6f4-e556-4a98-a1c9-bed6cff3b7f9 this\n]\n","thread_name":"restartedMain"}
+2026-01-20 15:39:17 | {"@timestamp":"2026-01-20T08:39:17.627484Z","@version":"1","level":"INFO","message":"[100.111.251.187]:33803 [dev] [5.3.5] [100.111.251.187]:33803 is STARTED","thread_name":"restartedMain"}
+2026-01-20 15:39:18 | {"@timestamp":"2026-01-20T08:39:18.503482Z","@version":"1","level":"DEBUG","message":"execute query: set autocommit=0","thread_name":"restartedMain"}
+2026-01-20 15:39:18 | {"@timestamp":"2026-01-20T08:39:18.558714Z","@version":"1","level":"DEBUG","message":"System variable change:  autocommit = OFF","thread_name":"restartedMain"}
+2026-01-20 15:39:18 | {"@timestamp":"2026-01-20T08:39:18.617471Z","@version":"1","level":"DEBUG","message":"execute query: SELECT @@tx_isolation","thread_name":"restartedMain"}
+2026-01-20 15:39:18 | {"@timestamp":"2026-01-20T08:39:18.718926Z","@version":"1","level":"DEBUG","message":"execute query: SELECT @@character_set_database, @@sql_mode","thread_name":"restartedMain"}
+2026-01-20 15:39:18 | {"@timestamp":"2026-01-20T08:39:18.812808Z","@version":"1","level":"DEBUG","message":"execute query: select @@lower_case_table_names","thread_name":"restartedMain"}
+2026-01-20 15:39:18 | {"@timestamp":"2026-01-20T08:39:18.904524Z","@version":"1","level":"WARN","message":"HHH90006001: Encountered incubating setting [hibernate.type.preferred_instant_jdbc_type].  See javadoc on corresponding `org.hibernate.cfg.AvailableSettings` constant for details.","thread_name":"restartedMain"}
+2026-01-20 15:39:19 | {"@timestamp":"2026-01-20T08:39:18.998145Z","@version":"1","level":"DEBUG","message":"execute query: set autocommit=0","thread_name":"Hikari connection adder"}
+2026-01-20 15:39:19 | {"@timestamp":"2026-01-20T08:39:19.056916Z","@version":"1","level":"DEBUG","message":"System variable change:  autocommit = OFF","thread_name":"Hikari connection adder"}
+2026-01-20 15:39:19 | {"@timestamp":"2026-01-20T08:39:19.200155Z","@version":"1","level":"WARN","message":"HHH90006001: Encountered incubating setting [hibernate.type.preferred_instant_jdbc_type].  See javadoc on corresponding `org.hibernate.cfg.AvailableSettings` constant for details.","thread_name":"restartedMain"}
+2026-01-20 15:39:19 | {"@timestamp":"2026-01-20T08:39:19.244009Z","@version":"1","level":"DEBUG","message":"execute query: set autocommit=0","thread_name":"Hikari connection adder"}
+2026-01-20 15:39:19 | {"@timestamp":"2026-01-20T08:39:19.296537Z","@version":"1","level":"DEBUG","message":"System variable change:  autocommit = OFF","thread_name":"Hikari connection adder"}
+2026-01-20 15:39:19 | {"@timestamp":"2026-01-20T08:39:19.487658Z","@version":"1","level":"DEBUG","message":"execute query: set autocommit=0","thread_name":"Hikari connection adder"}
+2026-01-20 15:39:19 | {"@timestamp":"2026-01-20T08:39:19.540174Z","@version":"1","level":"DEBUG","message":"System variable change:  autocommit = OFF","thread_name":"Hikari connection adder"}
+2026-01-20 15:39:19 | {"@timestamp":"2026-01-20T08:39:19.73794Z","@version":"1","level":"DEBUG","message":"execute query: set autocommit=0","thread_name":"Hikari connection adder"}
+2026-01-20 15:39:19 | {"@timestamp":"2026-01-20T08:39:19.790251Z","@version":"1","level":"DEBUG","message":"System variable change:  autocommit = OFF","thread_name":"Hikari connection adder"}
+2026-01-20 15:39:20 | {"@timestamp":"2026-01-20T08:39:19.987822Z","@version":"1","level":"DEBUG","message":"execute query: set autocommit=0","thread_name":"Hikari connection adder"}
+2026-01-20 15:39:20 | {"@timestamp":"2026-01-20T08:39:20.048139Z","@version":"1","level":"DEBUG","message":"System variable change:  autocommit = OFF","thread_name":"Hikari connection adder"}
+2026-01-20 15:39:20 | {"@timestamp":"2026-01-20T08:39:20.24726Z","@version":"1","level":"DEBUG","message":"execute query: set autocommit=0","thread_name":"Hikari connection adder"}
+2026-01-20 15:39:20 | {"@timestamp":"2026-01-20T08:39:20.299448Z","@version":"1","level":"DEBUG","message":"System variable change:  autocommit = OFF","thread_name":"Hikari connection adder"}
+2026-01-20 15:39:20 | {"@timestamp":"2026-01-20T08:39:20.467976Z","@version":"1","level":"DEBUG","message":"execute query: set autocommit=0","thread_name":"Hikari connection adder"}
+2026-01-20 15:39:20 | {"@timestamp":"2026-01-20T08:39:20.537797Z","@version":"1","level":"DEBUG","message":"System variable change:  autocommit = OFF","thread_name":"Hikari connection adder"}
+2026-01-20 15:39:20 | {"@timestamp":"2026-01-20T08:39:20.712851Z","@version":"1","level":"DEBUG","message":"execute query: set autocommit=0","thread_name":"Hikari connection adder"}
+2026-01-20 15:39:20 | {"@timestamp":"2026-01-20T08:39:20.764812Z","@version":"1","level":"DEBUG","message":"System variable change:  autocommit = OFF","thread_name":"Hikari connection adder"}
+2026-01-20 15:39:21 | {"@timestamp":"2026-01-20T08:39:20.929106Z","@version":"1","level":"DEBUG","message":"Starting HazelcastCacheManager","thread_name":"restartedMain"}
+2026-01-20 15:39:21 | {"@timestamp":"2026-01-20T08:39:20.944643Z","@version":"1","level":"DEBUG","message":"execute query: set autocommit=0","thread_name":"Hikari connection adder"}
+2026-01-20 15:39:21 | {"@timestamp":"2026-01-20T08:39:20.996046Z","@version":"1","level":"DEBUG","message":"System variable change:  autocommit = OFF","thread_name":"Hikari connection adder"}
+2026-01-20 15:39:22 | {"@timestamp":"2026-01-20T08:39:22.417142Z","@version":"1","level":"INFO","message":"Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@34d8cf98, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@aea520b, org.springframework.security.web.context.SecurityContextHolderFilter@1878fb5f, org.springframework.security.web.header.HeaderWriterFilter@322290e5, org.springframework.security.web.authentication.logout.LogoutFilter@7cc9878c, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@5527dfe3, com.singalarity.ekaasportal.bioblock.web.filter.SpaWebFilter@1316a2b9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4407ca53, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@171f269, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1a18ea8e, org.springframework.security.web.session.SessionManagementFilter@724fdc06, org.springframework.security.web.access.ExceptionTranslationFilter@22fc4a23, org.springframework.security.web.access.intercept.AuthorizationFilter@56e6aafc]","thread_name":"restartedMain"}
+2026-01-20 15:39:23 | {"@timestamp":"2026-01-20T08:39:23.332592Z","@version":"1","level":"DEBUG","message":"Initializing JHipster OpenApi customizer","thread_name":"restartedMain"}
+2026-01-20 15:39:23 | {"@timestamp":"2026-01-20T08:39:23.356803Z","@version":"1","level":"DEBUG","message":"Initializing JHipster OpenApi default group","thread_name":"restartedMain"}
+2026-01-20 15:39:23 | {"@timestamp":"2026-01-20T08:39:23.373443Z","@version":"1","level":"DEBUG","message":"Initializing JHipster OpenApi management group","thread_name":"restartedMain"}
+2026-01-20 15:39:23 | {"@timestamp":"2026-01-20T08:39:23.731179Z","@version":"1","level":"DEBUG","message":"Using SLF4J as the default logging framework","thread_name":"restartedMain"}
+2026-01-20 15:39:24 | {"@timestamp":"2026-01-20T08:39:24.443269Z","@version":"1","level":"INFO","message":"JBoss Threads version 3.5.0.Final","thread_name":"restartedMain"}
+2026-01-20 15:39:24 | {"@timestamp":"2026-01-20T08:39:24.639898Z","@version":"1","level":"INFO","message":"Started BioblockApp in 13.795 seconds (process running for 14.53)","thread_name":"restartedMain"}
+2026-01-20 15:39:24 | {"@timestamp":"2026-01-20T08:39:24.648202Z","@version":"1","level":"INFO","message":"\n----------------------------------------------------------\n\tApplication 'bioblock' is running! Access URLs:\n\tLocal: \t\thttp://localhost:28102/\n\tExternal: \thttp://192.168.1.89:28102/\n\tProfile(s): \t[no-liquibase, api-docs, dev]\n----------------------------------------------------------","thread_name":"restartedMain"}
+2026-01-20 15:39:24 | {"@timestamp":"2026-01-20T08:39:24.648681Z","@version":"1","level":"INFO","message":"\n----------------------------------------------------------\n\tConfig Server: \tNot found or not setup for this application\n----------------------------------------------------------","thread_name":"restartedMain"}
+2026-01-20 15:39:33 | {"@timestamp":"2026-01-20T08:39:33.536763Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:39:33 | {"@timestamp":"2026-01-20T08:39:33.558849Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:39:33 | {"@timestamp":"2026-01-20T08:39:33.595996Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:39:43 | {"@timestamp":"2026-01-20T08:39:43.855224Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:39:43 | {"@timestamp":"2026-01-20T08:39:43.855905Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:39:43 | {"@timestamp":"2026-01-20T08:39:43.863744Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:39:54 | {"@timestamp":"2026-01-20T08:39:53.999462Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:39:54 | {"@timestamp":"2026-01-20T08:39:54.000333Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:39:54 | {"@timestamp":"2026-01-20T08:39:54.006324Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:40:04 | {"@timestamp":"2026-01-20T08:40:04.131615Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:40:04 | {"@timestamp":"2026-01-20T08:40:04.132389Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:40:04 | {"@timestamp":"2026-01-20T08:40:04.136874Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:40:14 | {"@timestamp":"2026-01-20T08:40:14.256078Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:40:14 | {"@timestamp":"2026-01-20T08:40:14.256621Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:40:14 | {"@timestamp":"2026-01-20T08:40:14.261032Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:40:24 | {"@timestamp":"2026-01-20T08:40:24.378292Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:40:24 | {"@timestamp":"2026-01-20T08:40:24.378867Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:40:24 | {"@timestamp":"2026-01-20T08:40:24.38298Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:40:34 | {"@timestamp":"2026-01-20T08:40:34.5058Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:40:34 | {"@timestamp":"2026-01-20T08:40:34.506295Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:40:34 | {"@timestamp":"2026-01-20T08:40:34.509685Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:40:44 | {"@timestamp":"2026-01-20T08:40:44.625321Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:40:44 | {"@timestamp":"2026-01-20T08:40:44.626004Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:40:44 | {"@timestamp":"2026-01-20T08:40:44.630136Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:40:54 | {"@timestamp":"2026-01-20T08:40:54.756179Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:40:54 | {"@timestamp":"2026-01-20T08:40:54.757379Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:40:54 | {"@timestamp":"2026-01-20T08:40:54.761671Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:41:04 | {"@timestamp":"2026-01-20T08:41:04.88298Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:41:04 | {"@timestamp":"2026-01-20T08:41:04.883513Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:41:04 | {"@timestamp":"2026-01-20T08:41:04.887598Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:41:15 | {"@timestamp":"2026-01-20T08:41:15.008881Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:41:15 | {"@timestamp":"2026-01-20T08:41:15.009383Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:41:15 | {"@timestamp":"2026-01-20T08:41:15.012642Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:41:25 | {"@timestamp":"2026-01-20T08:41:25.130947Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:41:25 | {"@timestamp":"2026-01-20T08:41:25.131294Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:41:25 | {"@timestamp":"2026-01-20T08:41:25.133873Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:41:35 | {"@timestamp":"2026-01-20T08:41:35.255622Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:41:35 | {"@timestamp":"2026-01-20T08:41:35.256197Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:41:35 | {"@timestamp":"2026-01-20T08:41:35.258935Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:41:45 | {"@timestamp":"2026-01-20T08:41:45.37672Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:41:45 | {"@timestamp":"2026-01-20T08:41:45.377454Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:41:45 | {"@timestamp":"2026-01-20T08:41:45.381447Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:41:55 | {"@timestamp":"2026-01-20T08:41:55.510708Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:41:55 | {"@timestamp":"2026-01-20T08:41:55.511163Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:41:55 | {"@timestamp":"2026-01-20T08:41:55.514688Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:42:05 | {"@timestamp":"2026-01-20T08:42:05.633553Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:42:05 | {"@timestamp":"2026-01-20T08:42:05.634971Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:42:05 | {"@timestamp":"2026-01-20T08:42:05.638168Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:42:15 | {"@timestamp":"2026-01-20T08:42:15.764323Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:42:15 | {"@timestamp":"2026-01-20T08:42:15.764936Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:42:15 | {"@timestamp":"2026-01-20T08:42:15.768449Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:42:25 | {"@timestamp":"2026-01-20T08:42:25.90047Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:42:25 | {"@timestamp":"2026-01-20T08:42:25.900888Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:42:25 | {"@timestamp":"2026-01-20T08:42:25.903641Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:42:36 | {"@timestamp":"2026-01-20T08:42:36.020764Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:42:36 | {"@timestamp":"2026-01-20T08:42:36.021576Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:42:36 | {"@timestamp":"2026-01-20T08:42:36.025446Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:42:46 | {"@timestamp":"2026-01-20T08:42:46.157244Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:42:46 | {"@timestamp":"2026-01-20T08:42:46.157942Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:42:46 | {"@timestamp":"2026-01-20T08:42:46.161549Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:42:56 | {"@timestamp":"2026-01-20T08:42:56.277971Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:42:56 | {"@timestamp":"2026-01-20T08:42:56.278585Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:42:56 | {"@timestamp":"2026-01-20T08:42:56.282618Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:43:06 | {"@timestamp":"2026-01-20T08:43:06.416017Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:43:06 | {"@timestamp":"2026-01-20T08:43:06.416538Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:43:06 | {"@timestamp":"2026-01-20T08:43:06.420884Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:43:16 | {"@timestamp":"2026-01-20T08:43:16.558203Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:43:16 | {"@timestamp":"2026-01-20T08:43:16.558619Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:43:16 | {"@timestamp":"2026-01-20T08:43:16.561572Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:43:26 | {"@timestamp":"2026-01-20T08:43:26.678913Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:43:26 | {"@timestamp":"2026-01-20T08:43:26.679303Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:43:26 | {"@timestamp":"2026-01-20T08:43:26.682283Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:43:36 | {"@timestamp":"2026-01-20T08:43:36.809467Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:43:36 | {"@timestamp":"2026-01-20T08:43:36.809998Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:43:36 | {"@timestamp":"2026-01-20T08:43:36.814753Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:43:47 | {"@timestamp":"2026-01-20T08:43:46.961032Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:43:47 | {"@timestamp":"2026-01-20T08:43:46.96161Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:43:47 | {"@timestamp":"2026-01-20T08:43:46.965736Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:43:57 | {"@timestamp":"2026-01-20T08:43:57.085811Z","@version":"1","level":"DEBUG","message":"Securing GET /management/health","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:43:57 | {"@timestamp":"2026-01-20T08:43:57.086103Z","@version":"1","level":"DEBUG","message":"Set SecurityContextHolder to anonymous SecurityContext","thread_name":"XNIO-1 task-2"}
+2026-01-20 15:43:57 | {"@timestamp":"2026-01-20T08:43:57.088185Z","@version":"1","level":"DEBUG","message":"Secured GET /management/health","thread_name":"XNIO-1 task-2"}

@@ -5,12 +5,12 @@
       "host": "127.0.0.1",
       "vpsPort": 8080,
       "localPort": 28080,
-      "enabled": false,
-      "mode": "off",
+      "enabled": true,
+      "mode": "local",
       "localPath": "/Users/leluke/Documents/Singalarity/GUIMF/main-simplified",
       "cmd": "./gradlew bootRun",
       "skipRegister": true,
-      "localRunning": false,
+      "localRunning": true,
       "vpsReached": false,
       "rank": 10
     },
@@ -19,12 +19,12 @@
       "host": "127.0.0.1",
       "vpsPort": 8080,
       "localPort": 9000,
-      "enabled": false,
-      "mode": "off",
+      "enabled": true,
+      "mode": "local",
       "localPath": "/Users/leluke/Documents/Singalarity/GUIMF/main-simplified",
       "cmd": "npm start",
       "skipRegister": false,
-      "localRunning": false,
+      "localRunning": true,
       "vpsReached": false,
       "rank": 50
     },
@@ -39,7 +39,7 @@
       "cmd": "",
       "skipRegister": true,
       "localRunning": false,
-      "vpsReached": false,
+      "vpsReached": true,
       "rank": 40
     },
     {
@@ -131,8 +131,8 @@
       "host": "34.1.133.14",
       "vpsPort": 8080,
       "localPort": 28084,
-      "enabled": false,
-      "mode": "off",
+      "enabled": true,
+      "mode": "local",
       "localPath": "/Users/leluke/Documents/Singalarity/GUIMF/auditreport",
       "cmd": "",
       "skipRegister": true,
@@ -174,11 +174,11 @@
       "vpsPort": 8080,
       "localPort": 28102,
       "enabled": true,
-      "mode": "vps",
+      "mode": "local",
       "localPath": "/Users/leluke/Documents/Singalarity/GUIMF/bioblock",
       "cmd": "",
       "skipRegister": true,
-      "localRunning": false,
+      "localRunning": true,
       "vpsReached": false,
       "rank": 30
     },
@@ -265,8 +265,8 @@
   "uiSettings": {
     "theme": "light",
     "language": "en",
-    "activeTab": "tools",
+    "activeTab": "ports",
     "setupPath": "../..",
-    "logMode": "realtime"
+    "logMode": "files"
   }
 }
