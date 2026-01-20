@@ -1,0 +1,109 @@
+/* Port Scanner Styles */
+.scanner-card {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.scanner-header h3 {
+    margin: 0 0 4px 0;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+.scanner-header p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.scanner-controls {
+    display: flex;
+    gap: 12px;
+}
+
+.scanner-input {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 10px 14px;
+    color: var(--text-primary);
+    font-family: 'Monaco', monospace;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.scanner-input:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.scanner-results.hidden {
+    display: none;
+}
+
+.table-container {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.scanner-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.scanner-table th,
+.scanner-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.scanner-table th {
+    background: rgba(255, 255, 255, 0.05);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.scanner-table td {
+    font-size: 0.9rem;
+}
+
+.scanner-table tr:last-child td {
+    border-bottom: none;
+}
+
+.scanner-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.pid-cell {
+    font-family: 'Monaco', monospace;
+    color: var(--accent-cyan);
+}
+
+.port-cell {
+    font-family: 'Monaco', monospace;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.action-btn.danger {
+    background: rgba(255, 59, 48, 0.1);
+    color: var(--accent-red);
+    border-color: rgba(255, 59, 48, 0.3);
+}
+
+.action-btn.danger:hover {
+    background: var(--accent-red);
+    color: #fff;
+}

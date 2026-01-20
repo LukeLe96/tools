@@ -1,0 +1,21 @@
+
+    <div id="helper-modal" class="modal">
+        <div class="modal-content glass-card" style="max-width: 600px;">
+            <div class="section-header">
+                <h2>Helper Tools</h2>
+                <button onclick="closeHelper()" class="btn-icon" style="background:none; border:none; color:var(--text-muted);">✕</button>
+            </div>
+            
+            <p style="color:var(--text-muted); margin-bottom:16px;">Manage local ports and potential conflicts.</p>
+
+            <div class="helper-tools">
+                <div class="tool-section">
+                    <h3>Port Manager</h3>
+                    <div id="port-list" class="port-list">
+                        <div style="text-align:center; padding: 20px;">Loading...</div>
+                    </div>
+                    <button onclick="loadPortStatus()" class="btn-small" style="margin-top:12px;">Refresh</button>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consul Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="14" stroke="url(#grad1)" stroke-width="2"/>
+                        <circle cx="16" cy="16" r="6" fill="url(#grad1)"/>
+                        <defs>
+                            <linearGradient id="grad1" x1="0" y1="0" x2="32" y2="32">
+                                <stop offset="0%" stop-color="#00d4ff"/>
+                                <stop offset="100%" stop-color="#7c3aed"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h1 data-i18n="title">Consul Manager</h1>
+                <span class="version">v0.0.3</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <button class="nav-item active" onclick="switchTab('services')" id="tab-services">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    <span data-i18n="services">Services</span>
+                </button>
+                <button class="nav-item" onclick="switchTab('logs')" id="tab-logs">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    <span data-i18n="logs">Logs</span>
+                </button>
+                <button class="nav-item" onclick="switchTab('ports')" id="tab-ports">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                    <span>Scanner</span>
+                </button>
+                <button class="nav-item" onclick="switchTab('tools')" id="tab-tools">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                    <span data-i18n="tools">Tools</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <!-- Status removed as per request -->
+            </div>
+        </aside>
+
+        <!-- Main Content Wrapper -->
+        <main class="main-wrapper">
+            <header class="main-header">
+                <div class="header-breadcrumb">
+                    <h2 id="tab-title">Services</h2>
+                    <span id="service-count-badge" class="badge">0/0 enabled</span>
+                </div>
+                <div class="header-actions">
+                    <div class="lang-switcher-small">
+                        <button id="lang-en" class="active" onclick="setLanguage('en')">EN</button>
+                        <button id="lang-vi" onclick="setLanguage('vi')">VI</button>
+                    </div>
+                    <button id="theme-toggle" class="icon-btn" onclick="toggleTheme()" title="Toggle theme">
+                        <svg id="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+                        <svg id="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+                    </button>
+                    <button class="action-btn" onclick="forceReload()" title="Force Reload">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                    </button>
+                    <button class="action-btn primary" onclick="openConfig()">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        <span>Config</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="content-container">
+            <!-- Consul Control -->
+            <section class="card consul-control glass-card">
+                <div class="consul-grid">
+                    <!-- Local Consul -->
+                    <div class="consul-panel">
+                        <div class="consul-info">
+                            <span class="consul-label">Local</span>
+                            <span class="consul-url">localhost:8500</span>
+                            <div id="consul-local-status" class="status-dot stopped" title="Stopped"></div>
+                        </div>
+                        <div class="consul-actions" id="local-actions">
+                            <button id="btn-start" class="btn-icon btn-start" onclick="consulAction('start')" title="Start">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </button>
+                            <button id="btn-stop" class="btn-icon btn-stop" onclick="consulAction('stop')" title="Stop" style="display:none;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12"/></svg>
+                            </button>
+                            <button id="btn-restart" class="btn-icon btn-restart" onclick="consulAction('restart')" title="Restart" style="display:none;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
+                            </button>
+                            <a href="http://localhost:8500" target="_blank" class="btn-icon btn-link" title="Open Consul UI">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- VPS Consul -->
+                    <div class="consul-panel">
+                        <div class="consul-info">
+                            <span class="consul-label">VPS</span>
+                            <span class="consul-url">34.1.133.14:8500</span>
+                            <div id="consul-vps-status" class="status-dot" title="Checking..."></div>
+                        </div>
+                        <div class="consul-actions">
+                            <a href="http://34.1.133.14:8500" target="_blank" class="btn-icon btn-link" title="Open VPS Consul UI">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- VPS Database -->
+                    <div class="consul-panel">
+                        <div class="consul-info">
+                            <span class="consul-label">DB</span>
+                            <span class="consul-url">34.1.133.14:3306</span>
+                            <div id="db-vps-status" class="status-dot" title="Checking..."></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+               <!-- Port Scanner Section -->
+            <section id="content-ports" class="tab-content hidden">
+                <div class="card glass-card scanner-card">
+                    <div class="scanner-header">
+                        <h3>Port Scanner</h3>
+                        <p>Check for active processes on specific ports</p>
+                    </div>
+                    <div class="scanner-controls">
+                        <input type="text" id="scan-ports-input" placeholder="Enter ports (e.g. 8080, 9000)..." class="scanner-input">
+                        <button onclick="scanPorts()" class="action-btn primary btn-scan">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            Scan
+                        </button>
+                        <button onclick="killAllProcesses()" id="btn-kill-all" class="action-btn danger btn-kill-all" style="display:none;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+                            Kill All
+                        </button>
+                    </div>
+                </div>
+
+                <div id="scanner-results" class="scanner-results hidden">
+                    <div class="table-container">
+                        <table class="scanner-table">
+                            <thead>
+                                <tr>
+                                    <th>Port</th>
+                                    <th>PID</th>
+                                    <th>Process Name</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="scanner-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="content-services" class="tab-content active">
+                <div id="services-list" class="services-grid"></div>
+            </section>
+            
+            <!-- Logs Section -->
+            <section id="content-logs" class="tab-content">
+                <div class="log-navbar">
+                    <div class="log-modes">
+                        <button id="mode-realtime" class="log-mode-btn active" onclick="setLogMode('realtime')">Real-time</button>
+                        <button id="mode-files" class="log-mode-btn" onclick="setLogMode('files')">Files</button>
+                    </div>
+                    <div id="file-selector-container" class="file-selector" style="display:none;">
+                        <select id="log-file-list" onchange="loadLogFile()"></select>
+                    </div>
+                </div>
+                <div class="log-controls">
+                    <div class="search-box">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <input type="text" id="log-filter" placeholder="Filter logs (e.g. error, main-simp)..." oninput="filterLogs()">
+                    </div>
+                    <div class="log-actions">
+                        <button onclick="copyLogs()" class="icon-btn-text">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            <span>Copy</span>
+                        </button>
+                        <button onclick="clearLogs()" class="icon-btn-text">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18m-2 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                            <span>Clear</span>
+                        </button>
+                    </div>
+                </div>
+                <div id="log-viewer" class="code-view"></div>
+            </section>
+
+            <!-- Tools Section (Port Manager) -->
+            <section id="content-tools" class="tab-content">
+                <div class="section-card">
+                    <div class="tools-toolbar">
+                        <div class="toolbar-text">
+                            <h3>Port Manager</h3>
+                            <p>Active processes on service ports</p>
+                        </div>
+                        <button onclick="loadPortStatus()" class="action-btn sm primary">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                            <span>Refresh</span>
+                        </button>
+                    </div>
+                    
+                    <div id="ports-grid" class="services-grid">
+                        <div class="port-column-empty">
+                            <p>Click Refresh to scan ports</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+
+         
+        </div> <!-- End content-container -->
+    </main> <!-- End main-wrapper -->
+</div> <!-- End app-container -->
+
+    <!-- Config Modal -->
+    <div id="config-modal" class="modal">
+        <div class="modal-content glass-card" style="max-width: 900px; height: 80vh; display: flex; flex-direction: column;">
+            <div class="section-header">
+                <h2 data-i18n="configTitle">Configuration</h2>
+                <button onclick="closeConfig()" class="btn-icon" style="background:none; border:none; color:var(--text-muted); font-size: 1.2rem;">✕</button>
+            </div>
+            
+            <div class="config-tabs-header">
+                <button class="config-tab-btn active" onclick="switchConfigTab('scan')">Auto Scan</button>
+                <button class="config-tab-btn" onclick="switchConfigTab('services')">Services</button>
+                <button class="config-tab-btn" onclick="switchConfigTab('general')">General</button>
+            </div>
+
+            <div class="config-body" style="flex: 1; overflow-y: auto; padding: 16px 0;">
+                <!-- Scan Tab -->
+                <div id="config-tab-scan" class="config-tab-content active">
+                     <p style="color:var(--text-muted); margin-bottom:16px;">Scan a directory to automatically discover services and detect their local ports from application-dev.yml.</p>
+                     
+                     <div style="display: flex; gap: 12px; align-items: flex-end; margin-bottom: 16px;">
+                        <div class="input-group" style="flex: 1; margin-bottom: 0;">
+                            <label>Scan Root Path <span class="tooltip-icon" title="Directory containing all your service folders">?</span></label>
+                            <input type="text" id="cfg-scan-path" placeholder="/path/to/project" onkeydown="if(event.key==='Enter') confirmSetup()">
+                        </div>
+                        <button onclick="confirmSetup()" class="setup-btn" style="height: 38px; white-space: nowrap;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                            Run Scan
+                        </button>
+                    </div>
+                    
+                    <!-- Log Container -->
+                    <div id="scan-log-container" class="scan-log-container"></div>
+                </div>
+
+                <!-- Services Tab -->
+                <div id="config-tab-services" class="config-tab-content">
+                    <div class="services-toolbar">
+                        <button onclick="addService()" class="btn-small btn-primary">+ Add Service</button>
+                    </div>
+                    <div class="table-container">
+                        <table class="config-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Port</th>
+                                    <th>Def. Port</th>
+                                    <th>Local Path</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cfg-services-list"></tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Service Edit Form (Hidden by default) -->
+                    <div id="service-editor" class="service-editor" style="display:none;">
+                        <h3>Edit Service</h3>
+                        <div class="editor-grid">
+                            <input type="hidden" id="edit-original-name">
+                            <div class="input-group">
+                                <label>Name <span class="tooltip-icon" title="Unique identifier for the service">?</span></label>
+                                <input type="text" id="edit-name">
+                            </div>
+                            <div class="input-group">
+                                <label>Host <span class="tooltip-icon" title="Hostname/IP (usually localhost or VPS IP)">?</span></label>
+                                <input type="text" id="edit-host">
+                            </div>
+                            <div class="input-group">
+                                <label>Port <span class="tooltip-icon" title="Port used for Consul Registration">?</span></label>
+                                <input type="number" id="edit-port">
+                            </div>
+                            <div class="input-group">
+                                <label>Default Port <span class="tooltip-icon" title="Local port the service actually listens on">?</span></label>
+                                <input type="number" id="edit-def-port">
+                            </div>
+                            <div class="input-group full-width">
+                                <label>Local Path <span class="tooltip-icon" title="Absolute path to service directory">?</span></label>
+                                <input type="text" id="edit-local-path">
+                            </div>
+                             <div class="input-group full-width">
+                                <label>Command <span class="tooltip-icon" title="Custom command to start service. Default: ./gradlew bootRun">?</span></label>
+                                <input type="text" id="edit-cmd" placeholder="./gradlew bootRun">
+                            </div>
+                        </div>
+                        <div class="editor-actions">
+                            <button onclick="cancelEditService()" class="btn-small">Cancel</button>
+                            <button onclick="saveServiceChanges()" class="btn-small btn-primary">Done</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- General Tab -->
+                <div id="config-tab-general" class="config-tab-content">
+                    <div class="input-group">
+                        <label>Consul Executable Path <span class="tooltip-icon" title="Absolute path to the Consul binary (e.g., /usr/local/bin/consul)">?</span></label>
+                        <input type="text" id="cfg-consul-path" placeholder="consul">
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-actions" style="border-top: 1px solid var(--border-color); padding-top: 16px;">
+                <button onclick="closeConfig()" class="btn-small">Cancel</button>
+                <button onclick="saveFullConfig()" class="setup-btn">Save Configuration</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+
+
+    <script src="app.js"></script>
+</body>
+</html>

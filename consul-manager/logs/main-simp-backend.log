@@ -1,0 +1,147 @@
+2026-01-19 19:40:59 | 
+2026-01-19 19:40:59 | > Configure project :
+2026-01-19 19:40:59 | The 'sonarqube' task depends on compile tasks. This behavior is now deprecated and will be removed in version 5.x. To avoid implicit compilation, set property 'sonar.gradle.skipCompile' to 'true' and make sure your project is compiled, before analysis has started.
+2026-01-19 19:40:59 | The 'sonar' task depends on compile tasks. This behavior is now deprecated and will be removed in version 5.x. To avoid implicit compilation, set property 'sonar.gradle.skipCompile' to 'true' and make sure your project is compiled, before analysis has started.
+2026-01-19 19:40:59 | 
+2026-01-19 19:40:59 | > Task :bootBuildInfo UP-TO-DATE
+2026-01-19 19:40:59 | > Task :nodeSetup UP-TO-DATE
+2026-01-19 19:41:05 | > Task :fixedNode
+2026-01-19 19:41:05 | > Task :npmSetup UP-TO-DATE
+2026-01-19 19:41:10 | > Task :npmInstall UP-TO-DATE
+2026-01-19 19:41:11 | > Task :fixedNpm
+2026-01-19 19:41:11 | > Task :webapp UP-TO-DATE
+2026-01-19 19:41:11 | > Task :processResources UP-TO-DATE
+2026-01-19 19:41:12 | > Task :compileJava UP-TO-DATE
+2026-01-19 19:41:12 | > Task :generateGitProperties
+2026-01-19 19:41:12 | > Task :classes
+2026-01-19 19:41:12 | > Task :resolveMainClassName UP-TO-DATE
+2026-01-19 19:41:15 | 
+2026-01-19 19:41:15 | > Task :bootRun
+2026-01-19 19:41:15 | 
+2026-01-19 19:41:15 |   [32m      ██╗[36m ██╗   ██╗ ████████╗ ███████╗   ██████╗ ████████╗ ████████╗ ███████╗
+2026-01-19 19:41:15 |   [32m      ██║[36m ██║   ██║ ╚══██╔══╝ ██╔═══██╗ ██╔════╝ ╚══██╔══╝ ██╔═════╝ ██╔═══██╗
+2026-01-19 19:41:15 |   [32m      ██║[36m ████████║    ██║    ███████╔╝ ╚█████╗     ██║    ██████╗   ███████╔╝
+2026-01-19 19:41:15 |   [32m██╗   ██║[36m ██╔═══██║    ██║    ██╔════╝   ╚═══██╗    ██║    ██╔═══╝   ██╔══██║
+2026-01-19 19:41:15 |   [32m╚██████╔╝[36m ██║   ██║ ████████╗ ██║       ██████╔╝    ██║    ████████╗ ██║  ╚██╗
+2026-01-19 19:41:15 |   [32m ╚═════╝ [36m ╚═╝   ╚═╝ ╚═══════╝ ╚═╝       ╚═════╝     ╚═╝    ╚═══════╝ ╚═╝   ╚═╝
+2026-01-19 19:41:15 | 
+2026-01-19 19:41:15 | [94m:: JHipster 🤓  :: Running Spring Boot 3.1.5 :: Startup profile(s) dev ::
+2026-01-19 19:41:15 | :: https://www.jhipster.tech ::[39m
+2026-01-19 19:41:15 | 
+2026-01-19 19:41:15 | [2m2026-01-19T19:41:15.342+07:00[0;39m [32m INFO[0;39m [35m90032[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mc.singalarity.ekaasportal.main.MainApp  [0;39m [2m:[0;39m The following 2 profiles are active: "api-docs", "dev" 
+2026-01-19 19:41:19 | [2m2026-01-19T19:41:19.021+07:00[0;39m [33m WARN[0;39m [35m90032[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mo.s.data.convert.CustomConversions      [0;39m [2m:[0;39m Registering converter from class java.util.BitSet to class java.lang.Boolean as reading converter although it doesn't convert from a store-supported type; You might want to check your annotation setup at the converter implementation 
+2026-01-19 19:41:20 | [2m2026-01-19T19:41:20.684+07:00[0;39m [32mDEBUG[0;39m [35m90032[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mc.s.e.main.config.AsyncConfiguration    [0;39m [2m:[0;39m Creating Async Task Executor 
+2026-01-19 19:41:20 | [2m2026-01-19T19:41:20.775+07:00[0;39m [32mDEBUG[0;39m [35m90032[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mc.s.e.m.config.LiquibaseConfiguration   [0;39m [2m:[0;39m Configuring Liquibase 
+2026-01-19 19:41:51 | [2m2026-01-19T19:41:51.840+07:00[0;39m [31mERROR[0;39m [35m90032[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mcom.zaxxer.hikari.pool.HikariPool       [0;39m [2m:[0;39m HikariPool-1 - Exception during pool initialization. 
+2026-01-19 19:41:51 | 
+2026-01-19 19:41:51 | java.sql.SQLNonTransientConnectionException: Socket fail to connect to host:address=(host=34.1.133.14)(port=3306)(type=primary). Connect timed out
+2026-01-19 19:41:51 | 	at org.mariadb.jdbc.client.impl.ConnectionHelper.connectSocket(ConnectionHelper.java:137)
+2026-01-19 19:41:51 | 	at org.mariadb.jdbc.client.impl.StandardClient.<init>(StandardClient.java:99)
+2026-01-19 19:41:51 | 	at org.mariadb.jdbc.Driver.connect(Driver.java:70)
+2026-01-19 19:41:51 | 	at org.mariadb.jdbc.Driver.connect(Driver.java:101)
+2026-01-19 19:41:51 | 	at org.mariadb.jdbc.Driver.connect(Driver.java:27)
+2026-01-19 19:41:51 | 	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+2026-01-19 19:41:51 | 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+2026-01-19 19:41:51 | 	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+2026-01-19 19:41:51 | 	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+2026-01-19 19:41:51 | 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+2026-01-19 19:41:51 | 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+2026-01-19 19:41:51 | 	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+2026-01-19 19:41:51 | 	at tech.jhipster.config.liquibase.AsyncSpringLiquibase.afterPropertiesSet(AsyncSpringLiquibase.java:89)
+2026-01-19 19:41:51 | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+2026-01-19 19:41:51 | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+2026-01-19 19:41:51 | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+2026-01-19 19:41:51 | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+2026-01-19 19:41:51 | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+2026-01-19 19:41:51 | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+2026-01-19 19:41:51 | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+2026-01-19 19:41:51 | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+2026-01-19 19:41:51 | 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+2026-01-19 19:41:51 | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:950)
+2026-01-19 19:41:51 | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+2026-01-19 19:41:51 | 	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+2026-01-19 19:41:51 | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+2026-01-19 19:41:51 | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+2026-01-19 19:41:51 | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+2026-01-19 19:41:51 | 	at com.singalarity.ekaasportal.main.MainApp.main(MainApp.java:70)
+2026-01-19 19:41:51 | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2026-01-19 19:41:51 | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+2026-01-19 19:41:51 | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2026-01-19 19:41:51 | 	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+2026-01-19 19:41:51 | 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+2026-01-19 19:41:51 | Caused by: java.net.SocketTimeoutException: Connect timed out
+2026-01-19 19:41:51 | 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:551)
+2026-01-19 19:41:51 | 	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+2026-01-19 19:41:51 | 	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+2026-01-19 19:41:51 | 	at java.base/java.net.Socket.connect(Socket.java:633)
+2026-01-19 19:41:51 | 	at org.mariadb.jdbc.client.impl.ConnectionHelper.connectSocket(ConnectionHelper.java:131)
+2026-01-19 19:41:51 | 	... 33 common frames omitted
+2026-01-19 19:41:51 | 
+2026-01-19 19:41:51 | [2m2026-01-19T19:41:51.844+07:00[0;39m [31mERROR[0;39m [35m90032[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mt.j.c.liquibase.AsyncSpringLiquibase    [0;39m [2m:[0;39m Liquibase could not start correctly, your database is NOT ready: Socket fail to connect to host:address=(host=34.1.133.14)(port=3306)(type=primary). Connect timed out 
+2026-01-19 19:41:51 | 
+2026-01-19 19:41:51 | java.sql.SQLNonTransientConnectionException: Socket fail to connect to host:address=(host=34.1.133.14)(port=3306)(type=primary). Connect timed out
+2026-01-19 19:41:51 | 	at org.mariadb.jdbc.client.impl.ConnectionHelper.connectSocket(ConnectionHelper.java:137)
+2026-01-19 19:41:51 | 	at org.mariadb.jdbc.client.impl.StandardClient.<init>(StandardClient.java:99)
+2026-01-19 19:41:51 | 	at org.mariadb.jdbc.Driver.connect(Driver.java:70)
+2026-01-19 19:41:51 | 	at org.mariadb.jdbc.Driver.connect(Driver.java:101)
+2026-01-19 19:41:51 | 	at org.mariadb.jdbc.Driver.connect(Driver.java:27)
+2026-01-19 19:41:51 | 	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+2026-01-19 19:41:51 | 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+2026-01-19 19:41:51 | 	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+2026-01-19 19:41:51 | 	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+2026-01-19 19:41:51 | 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+2026-01-19 19:41:51 | 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+2026-01-19 19:41:51 | 	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+2026-01-19 19:41:51 | 	at tech.jhipster.config.liquibase.AsyncSpringLiquibase.afterPropertiesSet(AsyncSpringLiquibase.java:89)
+2026-01-19 19:41:51 | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+2026-01-19 19:41:51 | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+2026-01-19 19:41:51 | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+2026-01-19 19:41:51 | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+2026-01-19 19:41:51 | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+2026-01-19 19:41:51 | 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+2026-01-19 19:41:51 | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+2026-01-19 19:41:51 | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+2026-01-19 19:41:51 | 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973)
+2026-01-19 19:41:51 | 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:950)
+2026-01-19 19:41:51 | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+2026-01-19 19:41:51 | 	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+2026-01-19 19:41:51 | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+2026-01-19 19:41:51 | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+2026-01-19 19:41:51 | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+2026-01-19 19:41:51 | 	at com.singalarity.ekaasportal.main.MainApp.main(MainApp.java:70)
+2026-01-19 19:41:51 | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2026-01-19 19:41:51 | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+2026-01-19 19:41:51 | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2026-01-19 19:41:51 | 	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+2026-01-19 19:41:51 | 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+2026-01-19 19:41:51 | Caused by: java.net.SocketTimeoutException: Connect timed out
+2026-01-19 19:41:51 | 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:551)
+2026-01-19 19:41:51 | 	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+2026-01-19 19:41:51 | 	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+2026-01-19 19:41:51 | 	at java.base/java.net.Socket.connect(Socket.java:633)
+2026-01-19 19:41:51 | 	at org.mariadb.jdbc.client.impl.ConnectionHelper.connectSocket(ConnectionHelper.java:131)
+2026-01-19 19:41:51 | 	... 33 common frames omitted
+2026-01-19 19:41:51 | 
+2026-01-19 19:41:52 | [2m2026-01-19T19:41:52.061+07:00[0;39m [32mDEBUG[0;39m [35m90032[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mc.s.e.main.config.WebConfigurer         [0;39m [2m:[0;39m Registering CORS filter 
+2026-01-19 19:41:52 | [2m2026-01-19T19:41:52.909+07:00[0;39m [32mDEBUG[0;39m [35m90032[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mi.m.c.u.i.logging.InternalLoggerFactory [0;39m [2m:[0;39m Using SLF4J as the default logging framework 
+2026-01-19 19:41:53 | [2m2026-01-19T19:41:53.122+07:00[0;39m [32mDEBUG[0;39m [35m90032[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mc.a.JHipsterSpringDocGroupsConfiguration[0;39m [2m:[0;39m Initializing JHipster OpenApi customizer 
+2026-01-19 19:41:53 | [2m2026-01-19T19:41:53.134+07:00[0;39m [32mDEBUG[0;39m [35m90032[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mc.a.JHipsterSpringDocGroupsConfiguration[0;39m [2m:[0;39m Initializing JHipster OpenApi default group 
+2026-01-19 19:41:53 | [2m2026-01-19T19:41:53.141+07:00[0;39m [32mDEBUG[0;39m [35m90032[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mc.a.JHipsterSpringDocGroupsConfiguration[0;39m [2m:[0;39m Initializing JHipster OpenApi management group 
+2026-01-19 19:41:54 | [2m2026-01-19T19:41:54.027+07:00[0;39m [32m INFO[0;39m [35m90032[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mc.singalarity.ekaasportal.main.MainApp  [0;39m [2m:[0;39m Started MainApp in 40.566 seconds (process running for 41.308) 
+2026-01-19 19:41:54 | [2m2026-01-19T19:41:54.033+07:00[0;39m [32m INFO[0;39m [35m90032[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mc.singalarity.ekaasportal.main.MainApp  [0;39m [2m:[0;39m 
+2026-01-19 19:41:54 | ----------------------------------------------------------
+2026-01-19 19:41:54 | 	Application 'main' is running! Access URLs:
+2026-01-19 19:41:54 | 	Local: 		http://localhost:28080/
+2026-01-19 19:41:54 | 	External: 	http://127.0.0.1:28080/
+2026-01-19 19:41:54 | 	Profile(s): 	[api-docs, dev]
+2026-01-19 19:41:54 | ---------------------------------------------------------- 
+2026-01-19 19:41:54 | [2m2026-01-19T19:41:54.033+07:00[0;39m [32m INFO[0;39m [35m90032[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [36mc.singalarity.ekaasportal.main.MainApp  [0;39m [2m:[0;39m 
+2026-01-19 19:41:54 | ----------------------------------------------------------
+2026-01-19 19:41:54 | 	Config Server: 	Not found or not setup for this application
+2026-01-19 19:41:54 | ---------------------------------------------------------- 
+2026-01-19 19:43:43 | [2m2026-01-19T19:43:43.341+07:00[0;39m [32mDEBUG[0;39m [35m90032[0;39m [2m---[0;39m [2m[    parallel-10][0;39m [36mc.s.e.m.web.rest.AuthenticateController [0;39m [2m:[0;39m Enter: authorize() with argument[s] = [Mono.doOnNext ⇢ at org.springframework.web.reactive.result.method.annotation.AbstractMessageReaderArgumentResolver.readBody(AbstractMessageReaderArgumentResolver.java:207)] 
+2026-01-19 19:43:43 | [2m2026-01-19T19:43:43.343+07:00[0;39m [32m INFO[0;39m [35m90032[0;39m [2m---[0;39m [2m[    parallel-10][0;39m [36mc.s.e.m.web.rest.AuthenticateController [0;39m [2m:[0;39m User: Mono.doOnNext ⇢ at org.springframework.web.reactive.result.method.annotation.AbstractMessageReaderArgumentResolver.readBody(AbstractMessageReaderArgumentResolver.java:207). Enable 2fa: false 
+2026-01-19 19:43:43 | [2m2026-01-19T19:43:43.344+07:00[0;39m [32mDEBUG[0;39m [35m90032[0;39m [2m---[0;39m [2m[    parallel-10][0;39m [36mc.s.e.m.web.rest.AuthenticateController [0;39m [2m:[0;39m Exit: authorize() with result = Mono.map ⇢ at com.singalarity.ekaasportal.main.web.rest.AuthenticateController.authorize(AuthenticateController.java:109) 
+2026-01-19 19:44:26 | [2m2026-01-19T19:44:25.934+07:00[0;39m [32mDEBUG[0;39m [35m90032[0;39m [2m---[0;39m [2m[    parallel-14][0;39m [36mc.s.e.m.web.rest.AuthenticateController [0;39m [2m:[0;39m Enter: authorize() with argument[s] = [Mono.doOnNext ⇢ at org.springframework.web.reactive.result.method.annotation.AbstractMessageReaderArgumentResolver.readBody(AbstractMessageReaderArgumentResolver.java:207)] 
+2026-01-19 19:44:26 | [2m2026-01-19T19:44:25.934+07:00[0;39m [32m INFO[0;39m [35m90032[0;39m [2m---[0;39m [2m[    parallel-14][0;39m [36mc.s.e.m.web.rest.AuthenticateController [0;39m [2m:[0;39m User: Mono.doOnNext ⇢ at org.springframework.web.reactive.result.method.annotation.AbstractMessageReaderArgumentResolver.readBody(AbstractMessageReaderArgumentResolver.java:207). Enable 2fa: false 
+2026-01-19 19:44:26 | [2m2026-01-19T19:44:25.935+07:00[0;39m [32mDEBUG[0;39m [35m90032[0;39m [2m---[0;39m [2m[    parallel-14][0;39m [36mc.s.e.m.web.rest.AuthenticateController [0;39m [2m:[0;39m Exit: authorize() with result = Mono.map ⇢ at com.singalarity.ekaasportal.main.web.rest.AuthenticateController.authorize(AuthenticateController.java:109) 

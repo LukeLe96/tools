@@ -1,0 +1,306 @@
+2026-01-19 19:42:26 | <i> [webpack-dev-server] [HPM] Proxy created: /api,/services,/management,/v3/api-docs,/h2-console,/auth  -> http://localhost:28080
+2026-01-19 19:42:27 | <i> [webpack-dev-server] Project is running at:
+2026-01-19 19:42:27 | <i> [webpack-dev-server] Loopback: http://localhost:9060/
+2026-01-19 19:42:27 | <i> [webpack-dev-server] On Your Network (IPv4): http://192.168.1.87:9060/
+2026-01-19 19:42:27 | <i> [webpack-dev-server] On Your Network (IPv6): http://[fe80::1]:9060/
+2026-01-19 19:42:27 | <i> [webpack-dev-server] Content not from webpack is served from './build/resources/main/static/' directory
+2026-01-19 19:42:27 | <i> [webpack-dev-server] 404s will fallback to '/index.html'
+2026-01-19 19:42:35 | (node:90454) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+2026-01-19 19:42:35 | (Use `node --trace-deprecation ...` to show where the warning was created)
+2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:29 | 
+2026-01-19 19:42:29 |   ✔ Compile modules
+2026-01-19 19:42:29 |   ❯ Build modules (19%)
+2026-01-19 19:42:29 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:29 | 
+2026-01-19 19:42:29 |   ✔ Compile modules
+2026-01-19 19:42:29 |   ❯ Build modules (29%)
+2026-01-19 19:42:30 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:30 | 
+2026-01-19 19:42:30 |   ✔ Compile modules
+2026-01-19 19:42:30 |   ❯ Build modules (37%)
+2026-01-19 19:42:31 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:31 | 
+2026-01-19 19:42:31 |   ✔ Compile modules
+2026-01-19 19:42:31 |   ❯ Build modules (46%)
+2026-01-19 19:42:32 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:32 | 
+2026-01-19 19:42:32 |   ✔ Compile modules
+2026-01-19 19:42:32 |   ❯ Build modules (92%)
+2026-01-19 19:42:32 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:32 | 
+2026-01-19 19:42:32 |   ✔ Compile modules
+2026-01-19 19:42:32 |   ❯ Build modules (98%)
+2026-01-19 19:42:32 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:32 | 
+2026-01-19 19:42:32 |   ✔ Compile modules
+2026-01-19 19:42:32 |   ❯ Build modules (91%)
+2026-01-19 19:42:32 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:32 | 
+2026-01-19 19:42:32 |   ✔ Compile modules
+2026-01-19 19:42:32 |   ❯ Build modules (92%)
+2026-01-19 19:42:32 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:32 | 
+2026-01-19 19:42:32 |   ✔ Compile modules
+2026-01-19 19:42:32 |   ❯ Build modules (98%)
+2026-01-19 19:42:32 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:32 | 
+2026-01-19 19:42:32 |   ✔ Compile modules
+2026-01-19 19:42:32 |   ❯ Build modules (100%)
+2026-01-19 19:42:32 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:32 | 
+2026-01-19 19:42:32 |   ✔ Compile modules
+2026-01-19 19:42:32 |   ✔ Build modules
+2026-01-19 19:42:32 |   ❯ Optimize modules (-2%)
+2026-01-19 19:42:32 |     → Sealing ...
+2026-01-19 19:42:32 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:32 | 
+2026-01-19 19:42:32 |   ✔ Compile modules
+2026-01-19 19:42:32 |   ✔ Build modules
+2026-01-19 19:42:32 |   ❯ Optimize modules (1%)
+2026-01-19 19:42:32 |     → Sealing ...
+2026-01-19 19:42:32 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:32 | 
+2026-01-19 19:42:32 |   ✔ Compile modules
+2026-01-19 19:42:32 |   ✔ Build modules
+2026-01-19 19:42:32 |   ❯ Optimize modules (4%)
+2026-01-19 19:42:32 |     → Sealing ...
+2026-01-19 19:42:32 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:32 | 
+2026-01-19 19:42:32 |   ✔ Compile modules
+2026-01-19 19:42:32 |   ✔ Build modules
+2026-01-19 19:42:32 |   ❯ Optimize modules (7%)
+2026-01-19 19:42:32 |     → Sealing ...
+2026-01-19 19:42:32 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:32 | 
+2026-01-19 19:42:32 |   ✔ Compile modules
+2026-01-19 19:42:32 |   ✔ Build modules
+2026-01-19 19:42:32 |   ❯ Optimize modules (10%)
+2026-01-19 19:42:32 |     → Sealing ...
+2026-01-19 19:42:32 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:32 | 
+2026-01-19 19:42:32 |   ✔ Compile modules
+2026-01-19 19:42:32 |   ✔ Build modules
+2026-01-19 19:42:32 |   ❯ Optimize modules (12%)
+2026-01-19 19:42:32 |     → Sealing ...
+2026-01-19 19:42:32 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:32 | 
+2026-01-19 19:42:32 |   ✔ Compile modules
+2026-01-19 19:42:32 |   ✔ Build modules
+2026-01-19 19:42:32 |   ❯ Optimize modules (15%)
+2026-01-19 19:42:32 |     → Sealing ...
+2026-01-19 19:42:32 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:32 | 
+2026-01-19 19:42:32 |   ✔ Compile modules
+2026-01-19 19:42:32 |   ✔ Build modules
+2026-01-19 19:42:32 |   ❯ Optimize modules (18%)
+2026-01-19 19:42:32 |     → Sealing ...
+2026-01-19 19:42:32 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:32 | 
+2026-01-19 19:42:32 |   ✔ Compile modules
+2026-01-19 19:42:32 |   ✔ Build modules
+2026-01-19 19:42:32 |   ❯ Optimize modules (21%)
+2026-01-19 19:42:32 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (24%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (26%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (29%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (32%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (35%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (37%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (40%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (43%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (46%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (49%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (51%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (54%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (57%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (60%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (63%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (65%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (68%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (71%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (74%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (76%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (79%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (82%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (85%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (88%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (90%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (93%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (96%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (99%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ❯ Optimize modules (102%)
+2026-01-19 19:42:33 |     → Sealing ...
+2026-01-19 19:42:33 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:33 | 
+2026-01-19 19:42:33 |   ✔ Compile modules
+2026-01-19 19:42:33 |   ✔ Build modules
+2026-01-19 19:42:33 |   ✔ Optimize modules
+2026-01-19 19:42:33 |   ❯ Emit files
+2026-01-19 19:42:34 | [2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[GWebpack: Starting ...
+2026-01-19 19:42:34 | 
+2026-01-19 19:42:34 |   ✔ Compile modules
+2026-01-19 19:42:34 |   ✔ Build modules
+2026-01-19 19:42:34 |   ✔ Optimize modules
+2026-01-19 19:42:34 |   ✔ Emit files
+2026-01-19 19:42:34 | 
+2026-01-19 19:42:34 | Finished after 7.258 seconds.
+2026-01-19 19:42:34 | 
+2026-01-19 19:42:34 | 176 assets
+2026-01-19 19:42:34 | 12318 modules
+2026-01-19 19:42:34 | webpack 5.89.0 compiled successfully in 7220 ms
+2026-01-19 19:42:34 | Type-checking in progress...
+2026-01-19 19:42:34 | [Browsersync] Proxying: http://localhost:9060
+2026-01-19 19:42:34 | [Browsersync] Access URLs:
+2026-01-19 19:42:34 |  -------------------------------------
+2026-01-19 19:42:34 |        Local: http://localhost:9000
+2026-01-19 19:42:34 |     External: http://192.168.1.87:9000
+2026-01-19 19:42:34 |  -------------------------------------
+2026-01-19 19:42:34 |           UI: http://localhost:3001
+2026-01-19 19:42:34 |  UI External: http://localhost:3001
+2026-01-19 19:42:34 |  -------------------------------------
+2026-01-19 19:42:36 | No errors found.
