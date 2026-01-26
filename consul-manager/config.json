@@ -10,7 +10,7 @@
       "localPath": "/Users/leluke/Documents/Singalarity/GUIMF/main-simplified",
       "cmd": "./gradlew bootRun",
       "skipRegister": true,
-      "localRunning": true,
+      "localRunning": false,
       "vpsReached": false,
       "rank": 10
     },
@@ -24,7 +24,7 @@
       "localPath": "/Users/leluke/Documents/Singalarity/GUIMF/main-simplified",
       "cmd": "npm start",
       "skipRegister": false,
-      "localRunning": true,
+      "localRunning": false,
       "vpsReached": false,
       "rank": 50
     },
@@ -81,7 +81,7 @@
       "cmd": "",
       "skipRegister": true,
       "localRunning": false,
-      "vpsReached": false,
+      "vpsReached": true,
       "rank": 20
     },
     {
@@ -178,7 +178,7 @@
       "localPath": "/Users/leluke/Documents/Singalarity/GUIMF/bioblock",
       "cmd": "",
       "skipRegister": true,
-      "localRunning": true,
+      "localRunning": false,
       "vpsReached": false,
       "rank": 30
     },
@@ -265,8 +265,16 @@
   "uiSettings": {
     "theme": "light",
     "language": "en",
-    "activeTab": "ports",
+    "activeTab": "rules",
     "setupPath": "../..",
     "logMode": "files"
+  },
+  "database": {
+    "host": "34.1.133.14",
+    "port": 3306,
+    "username": "ekyc",
+    "password": "singalarity",
+    "database": "ekycportaldev",
+    "enabled": true
   }
 }

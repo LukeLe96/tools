@@ -20,7 +20,7 @@
                         <circle cx="16" cy="16" r="6" fill="url(#grad1)"/>
                         <defs>
                             <linearGradient id="grad1" x1="0" y1="0" x2="32" y2="32">
-                                <stop offset="0%" stop-color="#00d4ff"/>
+                                <stop offset="0%" stop-color="#0891B2"/>
                                 <stop offset="100%" stop-color="#7c3aed"/>
                             </linearGradient>
                         </defs>
@@ -46,6 +46,10 @@
                 <button class="nav-item" onclick="switchTab('tools')" id="tab-tools">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
                     <span data-i18n="tools">Tools</span>
+                </button>
+                <button class="nav-item" onclick="switchTab('rules')" id="tab-rules">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="10" y1="8" x2="16" y2="8"/><line x1="10" y1="12" x2="16" y2="12"/><line x1="10" y1="16" x2="16" y2="16"/></svg>
+                    <span>Rules</span>
                 </button>
             </nav>
 
@@ -217,17 +221,189 @@
                             <span>Refresh</span>
                         </button>
                     </div>
-                    
+
                     <div id="ports-grid" class="services-grid">
                         <div class="port-column-empty">
                             <p>Click Refresh to scan ports</p>
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <!-- Rules Section -->
+            <section id="content-rules" class="tab-content">
+                <!-- DB Connection Status -->
+                <div class="card glass-card" style="margin-bottom: 16px;">
+                    <div class="consul-grid" style="grid-template-columns: 1fr;">
+                        <div class="consul-panel">
+                            <div class="consul-info">
+                                <span class="consul-label">Database</span>
+                                <span class="consul-url" id="db-info">Connecting...</span>
+                                <div id="db-status-dot" class="status-dot" title="Checking..."></div>
+                            </div>
+                            <div class="consul-actions">
+                                <button onclick="loadRulesData()" class="btn-icon btn-link" title="Refresh">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Permission Checker -->
+                <div class="card glass-card" style="margin-bottom: 16px;">
+                    <h3 style="margin: 0 0 16px 0; font-size: 1.1rem;">Permission Checker</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr auto; gap: 12px; align-items: end;">
+                        <div class="input-group" style="margin-bottom: 0;">
+                            <label>User Login</label>
+                            <input type="text" id="check-user-input" placeholder="e.g., admin, user1..." onkeydown="if(event.key==='Enter') checkUserPermission()">
+                        </div>
+                        <div class="input-group" style="margin-bottom: 0;">
+                            <label>Action / API</label>
+                            <input type="text" id="check-action-input" placeholder="e.g., audit, /api/users..." onkeydown="if(event.key==='Enter') checkUserPermission()">
+                        </div>
+                        <button onclick="checkUserPermission()" class="action-btn primary" style="height: 38px;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            Check
+                        </button>
+                    </div>
+
+                    <!-- Check Result -->
+                    <div id="check-result" style="margin-top: 16px; display: none;">
+                        <div id="check-result-status" style="padding: 12px; border-radius: 8px; font-weight: 600; text-align: center;"></div>
+
+                        <!-- Matched Actions -->
+                        <div id="check-result-details" style="margin-top: 12px; display: none;">
+                            <div style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 8px;">Matched Permissions:</div>
+                            <div class="table-container">
+                                <table class="scanner-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Module</th>
+                                            <th>Action Name</th>
+                                            <th>API</th>
+                                            <th>Via Role</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="check-result-tbody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rules Stats -->
+                <div class="card glass-card" style="margin-bottom: 16px;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 600; color: var(--primary);" id="stats-actions">-</div>
+                            <div style="color: var(--text-muted); font-size: 0.875rem;">Total Actions</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 600; color: var(--accent);" id="stats-refs">-</div>
+                            <div style="color: var(--text-muted); font-size: 0.875rem;">Role Assignments</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 600; color: var(--success);" id="stats-apps">-</div>
+                            <div style="color: var(--text-muted); font-size: 0.875rem;">Unique Apps</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabs for Actions/Role-Actions/Users/Roles -->
+                <div class="card glass-card">
+                    <div class="log-navbar" style="margin-bottom: 16px;">
+                        <div class="log-modes">
+                            <button id="rules-mode-users" class="log-mode-btn active" onclick="switchRulesView('users')">Users</button>
+                            <button id="rules-mode-role-list" class="log-mode-btn" onclick="switchRulesView('role-list')">Roles</button>
+                            <button id="rules-mode-actions" class="log-mode-btn" onclick="switchRulesView('actions')">Actions</button>
+                            <button id="rules-mode-roles" class="log-mode-btn" onclick="switchRulesView('roles')">Role Assignments</button>
+                        </div>
+                    </div>
+
+                    <!-- Search/Filter -->
+                    <div class="log-controls" style="margin-bottom: 16px;">
+                        <div class="search-box">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            <input type="text" id="rules-filter" placeholder="Search by login, email, name..." oninput="handleRulesSearch()">
+                        </div>
+                    </div>
+
+                    <!-- Users Table -->
+                    <div id="rules-view-users" class="table-container">
+                        <table class="scanner-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Login</th>
+                                    <th>Email</th>
+                                    <th>Name</th>
+                                    <th>Roles</th>
+                                    <th>Active</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="rules-users-tbody">
+                                <tr><td colspan="7" style="text-align:center; color: var(--text-muted);">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Roles List Table -->
+                    <div id="rules-view-role-list" class="table-container" style="display:none;">
+                        <table class="scanner-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Role Name</th>
+                                    <th>Permissions</th>
+                                    <th>Active</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="rules-role-list-tbody">
+                                <tr><td colspan="5" style="text-align:center; color: var(--text-muted);">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Actions Table -->
+                    <div id="rules-view-actions" class="table-container" style="display:none;">
+                        <table class="scanner-table">
+                            <thead>
+                                <tr>
+                                    <th>Module</th>
+                                    <th>Action Name</th>
+                                    <th>API ID</th>
+                                    <th>Category</th>
+                                </tr>
+                            </thead>
+                            <tbody id="rules-actions-tbody">
+                                <tr><td colspan="4" style="text-align:center; color: var(--text-muted);">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Role-Actions Table -->
+                    <div id="rules-view-roles" class="table-container" style="display:none;">
+                        <table class="scanner-table">
+                            <thead>
+                                <tr>
+                                    <th>Role ID</th>
+                                    <th>Module</th>
+                                    <th>Action Name</th>
+                                    <th>Action ID</th>
+                                </tr>
+                            </thead>
+                            <tbody id="rules-roles-tbody">
+                                <tr><td colspan="4" style="text-align:center; color: var(--text-muted);">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </section>
 
-         
+
         </div> <!-- End content-container -->
     </main> <!-- End main-wrapper -->
 </div> <!-- End app-container -->
@@ -341,7 +517,55 @@
 
     <div id="toast-container"></div>
 
+    <!-- User/Role Permissions Modal -->
+    <div id="permissions-modal" class="modal">
+        <div class="modal-content glass-card" style="max-width: 1200px; height: 85vh; display: flex; flex-direction: column;">
+            <div class="section-header">
+                <h2 id="permissions-modal-title">Permissions</h2>
+                <button onclick="closePermissionsModal()" class="btn-icon" style="background:none; border:none; color:var(--text-muted); font-size: 1.2rem;">✕</button>
+            </div>
 
+            <!-- User/Role Info Bar -->
+            <div class="log-navbar" style="margin: 0 16px 16px 16px; padding: 12px 16px; border-radius: 8px; background: var(--card-bg);">
+                <div id="permissions-user-info" style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+                    <!-- Will be populated by JS -->
+                </div>
+            </div>
+
+            <div id="permissions-modal-body" style="flex: 1; overflow-y: auto; padding: 0 16px 16px 16px;">
+                <!-- Permissions Table -->
+                <div class="card glass-card">
+                    <div class="log-controls" style="margin-bottom: 16px;">
+                        <div class="search-box">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            <input type="text" id="permissions-filter" placeholder="Filter permissions..." oninput="filterPermissionsTable()">
+                        </div>
+                        <div class="log-actions">
+                            <span id="permissions-count" style="color: var(--text-muted); font-size: 0.875rem;"></span>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="scanner-table">
+                            <thead>
+                                <tr>
+                                    <th>Module</th>
+                                    <th>Action Name</th>
+                                    <th>API ID</th>
+                                    <th>Category</th>
+                                </tr>
+                            </thead>
+                            <tbody id="permissions-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-actions" style="border-top: 1px solid var(--border-color); padding-top: 16px;">
+                <button onclick="closePermissionsModal()" class="btn-small">Close</button>
+            </div>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>

@@ -9,9 +9,10 @@ echo "🐧 Building for Linux (AMD64)..."
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o dist/consul-manager-linux main.go
 echo "✅ Built binary"
 
-# Copy resources
+# Copy resources and sanitize config
 echo "📂 Copying resource files..."
-cp config.json dist/
+python3 sanitize_config.py
+
 cp -r static/* dist/static/
 
 # Basic README

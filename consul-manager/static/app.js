@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     // Check for hash in URL, otherwise use saved tab
     const hash = window.location.hash.slice(1);
-    if (hash && ['services', 'logs', 'tools', 'ports'].includes(hash)) {
+    if (hash && ['services', 'logs', 'tools', 'ports', 'rules'].includes(hash)) {
         activeTab = hash;
     }
     
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Handle browser back/forward buttons
     window.addEventListener('hashchange', () => {
         const hash = window.location.hash.slice(1);
-        if (hash && ['services', 'logs', 'tools'].includes(hash)) {
+        if (hash && ['services', 'logs', 'tools', 'ports', 'rules'].includes(hash)) {
             switchTab(hash, true);
         }
     });
@@ -179,11 +179,13 @@ function switchTab(tab, persist = true) {
     const titleMap = {
         'services': translations[currentLang].services || 'Services',
         'logs': translations[currentLang].logs || 'Logs',
-        'tools': translations[currentLang].tools || 'Tools'
+        'tools': translations[currentLang].tools || 'Tools',
+        'rules': 'Rules',
+        'ports': 'Scanner'
     };
     const tabTitle = document.getElementById('tab-title');
     if (tabTitle) tabTitle.textContent = titleMap[tab] || tab.charAt(0).toUpperCase() + tab.slice(1);
-    
+
     // Hide/Show badge
     const badge = document.getElementById('service-count-badge');
     if (badge) badge.style.display = (tab === 'services' ? 'inline-flex' : 'none');
@@ -195,6 +197,8 @@ function switchTab(tab, persist = true) {
         loadPortStatus();
     } else if (tab === 'services') {
         renderServices();
+    } else if (tab === 'rules') {
+        loadRulesData();
     }
 }
 
@@ -1638,5 +1642,519 @@ function showToastWithAction(message, title, actionText, actionCallback) {
             setTimeout(() => toast.remove(), 300);
         }
     }, 10000);
+}
+
+// ===== Rules/Database Functions =====
+let rulesData = {
+    actions: [],
+    roleActions: [],
+    users: [],
+    roles: [],
+    actionsMap: {}, // For quick lookup
+    currentPermissions: [] // For modal filtering
+};
+let currentRulesView = 'users';
+let searchTimeout = null;
+
+async function loadRulesData() {
+    try {
+        // Test DB connection first
+        const dbStatus = await fetch('/api/database/test').then(r => r.json());
+        const dbDot = document.getElementById('db-status-dot');
+        const dbInfo = document.getElementById('db-info');
+
+        if (dbStatus.connected) {
+            dbDot.className = 'status-dot running';
+            dbDot.title = 'Connected';
+            dbInfo.textContent = `${dbStatus.database} @ ${dbStatus.host}`;
+        } else {
+            dbDot.className = 'status-dot stopped';
+            dbDot.title = 'Disconnected';
+            dbInfo.textContent = dbStatus.error || 'Connection failed';
+            return;
+        }
+
+        // Fetch all data in parallel
+        const [exportData, usersData, rolesData] = await Promise.all([
+            fetch('/api/rules/export').then(r => r.json()),
+            fetch('/api/rules/users').then(r => r.json()),
+            fetch('/api/rules/roles').then(r => r.json())
+        ]);
+
+        rulesData.actions = exportData.actions || [];
+        rulesData.roleActions = exportData.roleActions || [];
+        rulesData.users = usersData || [];
+        rulesData.roles = rolesData || [];
+
+        // Build actions map for quick lookup
+        rulesData.actionsMap = {};
+        rulesData.actions.forEach(action => {
+            rulesData.actionsMap[action.id] = action;
+        });
+
+        // Update stats
+        document.getElementById('stats-actions').textContent = exportData.totalActions || 0;
+        document.getElementById('stats-refs').textContent = exportData.totalRefs || 0;
+
+        // Count unique apps
+        const uniqueApps = new Set(rulesData.actions.map(a => a.app_id));
+        document.getElementById('stats-apps').textContent = uniqueApps.size;
+
+        // Render current view
+        renderRulesTable();
+
+    } catch (error) {
+        console.error('Failed to load rules:', error);
+        showToast('Failed to load rules: ' + error.message, 'error');
+    }
+}
+
+function switchRulesView(view) {
+    currentRulesView = view;
+
+    // Update buttons
+    document.getElementById('rules-mode-users').classList.toggle('active', view === 'users');
+    document.getElementById('rules-mode-role-list').classList.toggle('active', view === 'role-list');
+    document.getElementById('rules-mode-actions').classList.toggle('active', view === 'actions');
+    document.getElementById('rules-mode-roles').classList.toggle('active', view === 'roles');
+
+    // Show/hide tables
+    document.getElementById('rules-view-users').style.display = (view === 'users' ? 'block' : 'none');
+    document.getElementById('rules-view-role-list').style.display = (view === 'role-list' ? 'block' : 'none');
+    document.getElementById('rules-view-actions').style.display = (view === 'actions' ? 'block' : 'none');
+    document.getElementById('rules-view-roles').style.display = (view === 'roles' ? 'block' : 'none');
+
+    // Update placeholder
+    const filterInput = document.getElementById('rules-filter');
+    if (view === 'users') {
+        filterInput.placeholder = 'Search by login, email, name...';
+    } else if (view === 'role-list') {
+        filterInput.placeholder = 'Search roles...';
+    } else if (view === 'actions') {
+        filterInput.placeholder = 'Search actions...';
+    } else if (view === 'roles') {
+        filterInput.placeholder = 'Search role assignments...';
+    }
+
+    // Clear filter
+    filterInput.value = '';
+
+    // Render
+    renderRulesTable();
+}
+
+function renderRulesTable() {
+    const filterValue = document.getElementById('rules-filter').value.toLowerCase();
+
+    if (currentRulesView === 'users') {
+        renderUsersTable(filterValue);
+    } else if (currentRulesView === 'role-list') {
+        renderRolesListTable(filterValue);
+    } else if (currentRulesView === 'actions') {
+        renderActionsTable(filterValue);
+    } else if (currentRulesView === 'roles') {
+        renderRoleActionsTable(filterValue);
+    }
+}
+
+function renderActionsTable(filter) {
+    const tbody = document.getElementById('rules-actions-tbody');
+
+    let filtered = rulesData.actions;
+    if (filter) {
+        filtered = rulesData.actions.filter(action =>
+            action.name.toLowerCase().includes(filter) ||
+            action.app_id.toString().includes(filter) ||
+            (action.api_id && action.api_id.toLowerCase().includes(filter)) ||
+            (action.category_id && action.category_id.toLowerCase().includes(filter))
+        );
+    }
+
+    if (filtered.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; color: var(--text-muted);">No actions found</td></tr>';
+        return;
+    }
+
+    // Group by module (first part before first dot)
+    const grouped = {};
+    filtered.forEach(action => {
+        const module = action.name.split('.')[0] || 'other';
+        if (!grouped[module]) {
+            grouped[module] = [];
+        }
+        grouped[module].push(action);
+    });
+
+    // Sort modules alphabetically
+    const sortedModules = Object.keys(grouped).sort();
+
+    // Build table HTML with group headers
+    let html = '';
+    sortedModules.forEach(module => {
+        const actions = grouped[module];
+
+        // Module group header
+        html += `
+            <tr style="background: var(--card-bg); border-top: 2px solid var(--border-color);">
+                <td colspan="4" style="padding: 8px 12px; font-weight: 600; color: var(--primary);">
+                    ${module} (${actions.length})
+                </td>
+            </tr>
+        `;
+
+        // Actions in this module
+        actions.forEach(action => {
+            html += `
+                <tr>
+                    <td><span class="badge">${module}</span></td>
+                    <td><code style="font-size: 0.85rem;">${action.name}</code></td>
+                    <td><code style="font-size: 0.85rem;">${action.api_id || '-'}</code></td>
+                    <td>${action.category_id || '-'}</td>
+                </tr>
+            `;
+        });
+    });
+
+    tbody.innerHTML = html;
+}
+
+function renderRoleActionsTable(filter) {
+    const tbody = document.getElementById('rules-roles-tbody');
+
+    let filtered = rulesData.roleActions;
+    if (filter) {
+        filtered = rulesData.roleActions.filter(ref => {
+            const action = rulesData.actionsMap[ref.action_id];
+            const module = action ? action.name.split('.')[0] : '';
+            return ref.auth_role_id.toString().includes(filter) ||
+                   ref.action_id.toString().includes(filter) ||
+                   (action && action.name.toLowerCase().includes(filter)) ||
+                   (module && module.toLowerCase().includes(filter));
+        });
+    }
+
+    if (filtered.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; color: var(--text-muted);">No role assignments found</td></tr>';
+        return;
+    }
+
+    tbody.innerHTML = filtered.map(ref => {
+        const action = rulesData.actionsMap[ref.action_id];
+        const module = action ? action.name.split('.')[0] : 'unknown';
+        return `
+            <tr>
+                <td><span class="badge">${ref.auth_role_id}</span></td>
+                <td><span class="badge">${module}</span></td>
+                <td><code style="font-size: 0.85rem;">${action ? action.name : 'Unknown'}</code></td>
+                <td>${ref.action_id}</td>
+            </tr>
+        `;
+    }).join('');
+}
+
+function renderUsersTable(filter) {
+    const tbody = document.getElementById('rules-users-tbody');
+
+    let filtered = rulesData.users;
+    if (filter) {
+        filtered = rulesData.users.filter(user =>
+            user.login.toLowerCase().includes(filter) ||
+            user.email.toLowerCase().includes(filter) ||
+            user.first_name.toLowerCase().includes(filter) ||
+            user.last_name.toLowerCase().includes(filter) ||
+            user.roles.toLowerCase().includes(filter)
+        );
+    }
+
+    if (filtered.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; color: var(--text-muted);">No users found</td></tr>';
+        return;
+    }
+
+    tbody.innerHTML = filtered.map(user => `
+        <tr>
+            <td>${user.id}</td>
+            <td><code>${user.login}</code></td>
+            <td>${user.email}</td>
+            <td>${user.first_name} ${user.last_name}</td>
+            <td><span class="badge">${user.roles || 'No roles'}</span></td>
+            <td>${user.activated ? '<span style="color: var(--success);">✓</span>' : '<span style="color: var(--error);">✗</span>'}</td>
+            <td>
+                <button onclick="viewUserPermissions(${user.id}, '${user.login}')" class="btn-small btn-primary">View Permissions</button>
+            </td>
+        </tr>
+    `).join('');
+}
+
+function renderRolesListTable(filter) {
+    const tbody = document.getElementById('rules-role-list-tbody');
+
+    let filtered = rulesData.roles;
+    if (filter) {
+        filtered = rulesData.roles.filter(role =>
+            role.name.toLowerCase().includes(filter)
+        );
+    }
+
+    if (filtered.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; color: var(--text-muted);">No roles found</td></tr>';
+        return;
+    }
+
+    tbody.innerHTML = filtered.map(role => `
+        <tr>
+            <td>${role.id}</td>
+            <td><strong>${role.name}</strong></td>
+            <td><span class="badge">${role.action_count} permissions</span></td>
+            <td>${role.activated ? '<span style="color: var(--success);">✓</span>' : '<span style="color: var(--error);">✗</span>'}</td>
+            <td>
+                <button onclick="viewRolePermissions(${role.id}, '${role.name.replace(/'/g, "\\'")}')" class="btn-small btn-primary">View Permissions</button>
+            </td>
+        </tr>
+    `).join('');
+}
+
+// Handle search with debounce for better UX
+function handleRulesSearch() {
+    if (searchTimeout) {
+        clearTimeout(searchTimeout);
+    }
+
+    const query = document.getElementById('rules-filter').value.trim();
+
+    // If searching users view and query is long enough, do server-side search
+    if (currentRulesView === 'users' && query.length >= 2) {
+        searchTimeout = setTimeout(async () => {
+            try {
+                const results = await fetch(`/api/rules/user-search?q=${encodeURIComponent(query)}`).then(r => r.json());
+                rulesData.users = results;
+                renderUsersTable(''); // Don't filter again, already filtered by server
+            } catch (error) {
+                console.error('Search failed:', error);
+                renderRulesTable(); // Fallback to local filter
+            }
+        }, 300);
+    } else {
+        // Local filtering
+        searchTimeout = setTimeout(() => {
+            renderRulesTable();
+        }, 150);
+    }
+}
+
+function filterRulesTable() {
+    renderRulesTable();
+}
+
+// View user permissions in modal
+async function viewUserPermissions(userId, login) {
+    try {
+        const data = await fetch(`/api/rules/user-permissions?userId=${userId}`).then(r => r.json());
+
+        rulesData.currentPermissions = data.actions || [];
+
+        document.getElementById('permissions-modal-title').textContent = 'Permissions';
+
+        // Populate info bar
+        const rolesText = data.roles.join(', ') || 'No roles';
+        document.getElementById('permissions-user-info').innerHTML = `
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <strong>${data.user.login}</strong>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <span style="color: var(--text-muted);">${data.user.email}</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span class="badge">${rolesText}</span>
+            </div>
+        `;
+
+        // Count modules
+        const modules = new Set(data.actions.map(a => a.name.split('.')[0]));
+        document.getElementById('permissions-count').textContent = `${data.action_count} permissions • ${modules.size} modules`;
+        document.getElementById('permissions-filter').value = '';
+
+        renderPermissionsTable();
+
+        document.getElementById('permissions-modal').classList.add('show');
+
+    } catch (error) {
+        console.error('Failed to load user permissions:', error);
+        showToast('Failed to load user permissions', 'error');
+    }
+}
+
+// View role permissions in modal
+async function viewRolePermissions(roleId, roleName) {
+    try {
+        const data = await fetch(`/api/rules/role-permissions?roleId=${roleId}`).then(r => r.json());
+
+        rulesData.currentPermissions = data.actions || [];
+
+        document.getElementById('permissions-modal-title').textContent = 'Permissions';
+
+        // Populate info bar
+        const statusText = data.role.activated ?
+            '<span style="color: var(--success);">✓ Active</span>' :
+            '<span style="color: var(--error);">✗ Inactive</span>';
+
+        document.getElementById('permissions-user-info').innerHTML = `
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <strong>${data.role.name}</strong>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="color: var(--text-muted); font-size: 0.875rem;">ID: ${data.role.id}</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+                ${statusText}
+            </div>
+        `;
+
+        // Count modules
+        const modules = new Set(data.actions.map(a => a.name.split('.')[0]));
+        document.getElementById('permissions-count').textContent = `${data.action_count} permissions • ${modules.size} modules`;
+        document.getElementById('permissions-filter').value = '';
+
+        renderPermissionsTable();
+
+        document.getElementById('permissions-modal').classList.add('show');
+
+    } catch (error) {
+        console.error('Failed to load role permissions:', error);
+        showToast('Failed to load role permissions', 'error');
+    }
+}
+
+function renderPermissionsTable() {
+    const tbody = document.getElementById('permissions-tbody');
+    const filter = document.getElementById('permissions-filter').value.toLowerCase();
+
+    let filtered = rulesData.currentPermissions;
+    if (filter) {
+        filtered = rulesData.currentPermissions.filter(action =>
+            action.name.toLowerCase().includes(filter) ||
+            (action.api_id && action.api_id.toLowerCase().includes(filter)) ||
+            (action.category_id && action.category_id.toLowerCase().includes(filter))
+        );
+    }
+
+    if (filtered.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; color: var(--text-muted);">No permissions found</td></tr>';
+        return;
+    }
+
+    // Group by module (first part before first dot)
+    const grouped = {};
+    filtered.forEach(action => {
+        const module = action.name.split('.')[0] || 'other';
+        if (!grouped[module]) {
+            grouped[module] = [];
+        }
+        grouped[module].push(action);
+    });
+
+    // Sort modules alphabetically
+    const sortedModules = Object.keys(grouped).sort();
+
+    // Build table HTML with group headers
+    let html = '';
+    sortedModules.forEach(module => {
+        const actions = grouped[module];
+
+        // Module group header
+        html += `
+            <tr style="background: var(--card-bg); border-top: 2px solid var(--border-color);">
+                <td colspan="4" style="padding: 8px 12px; font-weight: 600; color: var(--primary);">
+                    ${module} (${actions.length})
+                </td>
+            </tr>
+        `;
+
+        // Actions in this module
+        actions.forEach(action => {
+            html += `
+                <tr>
+                    <td><span class="badge">${module}</span></td>
+                    <td><code style="font-size: 0.85rem;">${action.name}</code></td>
+                    <td><code style="font-size: 0.85rem;">${action.api_id || '-'}</code></td>
+                    <td>${action.category_id || '-'}</td>
+                </tr>
+            `;
+        });
+    });
+
+    tbody.innerHTML = html;
+}
+
+function filterPermissionsTable() {
+    renderPermissionsTable();
+}
+
+function closePermissionsModal() {
+    document.getElementById('permissions-modal').classList.remove('show');
+}
+
+// Check user permission
+async function checkUserPermission() {
+    const userInput = document.getElementById('check-user-input').value.trim();
+    const actionInput = document.getElementById('check-action-input').value.trim();
+
+    if (!userInput || !actionInput) {
+        showToast('Please enter both user and action', 'error');
+        return;
+    }
+
+    try {
+        const response = await fetch(`/api/rules/check-permission?user=${encodeURIComponent(userInput)}&action=${encodeURIComponent(actionInput)}`);
+
+        if (!response.ok) {
+            const error = await response.text();
+            showToast(error || 'Check failed', 'error');
+            return;
+        }
+
+        const data = await response.json();
+
+        // Show result
+        const resultDiv = document.getElementById('check-result');
+        const statusDiv = document.getElementById('check-result-status');
+        const detailsDiv = document.getElementById('check-result-details');
+
+        resultDiv.style.display = 'block';
+
+        if (data.has_permission) {
+            statusDiv.style.background = 'var(--success-bg, #10b98120)';
+            statusDiv.style.color = 'var(--success)';
+            statusDiv.innerHTML = `✓ YES - User "${data.user}" has ${data.matched_count} permission(s) matching "${data.action_query}"`;
+
+            // Show details
+            detailsDiv.style.display = 'block';
+            const tbody = document.getElementById('check-result-tbody');
+            tbody.innerHTML = data.matched_actions.map(action => {
+                const module = action.name.split('.')[0] || 'other';
+                return `
+                    <tr>
+                        <td><span class="badge">${module}</span></td>
+                        <td><code style="font-size: 0.85rem;">${action.name}</code></td>
+                        <td><code style="font-size: 0.85rem;">${action.api_id || '-'}</code></td>
+                        <td><span class="badge">${action.role_name}</span></td>
+                    </tr>
+                `;
+            }).join('');
+        } else {
+            statusDiv.style.background = 'var(--error-bg, #ef444420)';
+            statusDiv.style.color = 'var(--error)';
+            statusDiv.innerHTML = `✗ NO - User "${data.user}" does NOT have permission matching "${data.action_query}"`;
+            detailsDiv.style.display = 'none';
+        }
+
+    } catch (error) {
+        console.error('Check permission failed:', error);
+        showToast('Failed to check permission: ' + error.message, 'error');
+    }
 }
 

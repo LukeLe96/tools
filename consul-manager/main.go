@@ -6,6 +6,7 @@ import (
 	"bytes"
 	"compress/gzip"
 	"context"
+	"database/sql"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -23,6 +24,7 @@ import (
 	"syscall"
 	"time"
 
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/gorilla/websocket"
 )
 
@@ -50,11 +52,75 @@ type UISettings struct {
 	LogMode   string `json:"logMode"`
 }
 
+type DatabaseConfig struct {
+	Host     string `json:"host"`
+	Port     int    `json:"port"`
+	Username string `json:"username"`
+	Password string `json:"password"`
+	Database string `json:"database"`
+	Enabled  bool   `json:"enabled"`
+}
+
 type Config struct {
-	Services   []Service `json:"services"`
-	ConsulPath string    `json:"consulPath"`
-	ConsulArgs []string  `json:"consulArgs"`
-	UISettings UISettings `json:"uiSettings"`
+	Services   []Service      `json:"services"`
+	ConsulPath string         `json:"consulPath"`
+	ConsulArgs []string       `json:"consulArgs"`
+	UISettings UISettings     `json:"uiSettings"`
+	Database   DatabaseConfig `json:"database"`
+}
+
+// Database models for rules
+type AuthAction struct {
+	ID         int    `json:"id"`
+	AppID      string `json:"app_id"`
+	Name       string `json:"name"`
+	RoleIndex  int    `json:"role_index"`
+	ApiID      string `json:"api_id"`
+	CategoryID string `json:"category_id"`
+}
+
+type RoleActionRef struct {
+	AuthRoleID int `json:"auth_role_id"`
+	ActionID   int `json:"action_id"`
+}
+
+type User struct {
+	ID        int    `json:"id"`
+	Login     string `json:"login"`
+	Email     string `json:"email"`
+	FirstName string `json:"first_name"`
+	LastName  string `json:"last_name"`
+	Activated bool   `json:"activated"`
+}
+
+type Role struct {
+	ID        int    `json:"id"`
+	Name      string `json:"name"`
+	Activated bool   `json:"activated"`
+	GroupID   *int   `json:"group_id"`
+}
+
+type UserRole struct {
+	UserID int `json:"user_id"`
+	RoleID int `json:"role_id"`
+}
+
+type UserWithRoles struct {
+	User
+	Roles []string `json:"roles"`
+}
+
+type RoleWithActions struct {
+	Role
+	Actions      []AuthAction `json:"actions"`
+	ActionCount  int          `json:"action_count"`
+}
+
+type UserPermissions struct {
+	User
+	Roles       []string     `json:"roles"`
+	Actions     []AuthAction `json:"actions"`
+	ActionCount int          `json:"action_count"`
 }
 
 var (
@@ -68,7 +134,7 @@ var (
 	upgrader     = websocket.Upgrader{
 		CheckOrigin: func(r *http.Request) bool { return true },
 	}
-	
+
 	runningProcs = make(map[string]*exec.Cmd)
 	procMutex    sync.Mutex
 
@@ -81,6 +147,9 @@ var (
 		},
 		Timeout: 5 * time.Second, // Reduced from 10s for better responsiveness
 	}
+
+	db     *sql.DB
+	dbLock sync.Mutex
 )
 
 func main() {
@@ -107,9 +176,21 @@ func main() {
 	http.HandleFunc("/api/settings", handleSettings)                     // New: Persistence
 	http.HandleFunc("/api/helper/ports", gzipMiddleware(handleHelperPorts))
 	http.HandleFunc("/api/helper/kill", handleHelperKill)
-    http.HandleFunc("/api/helper/scan-active", handleHelperScanActive)
-    http.HandleFunc("/api/consul/install", handleConsulInstall)
+	http.HandleFunc("/api/helper/scan-active", handleHelperScanActive)
+	http.HandleFunc("/api/consul/install", handleConsulInstall)
 	http.HandleFunc("/ws/logs", handleWebSocket)
+
+	// Database & Rules API
+	http.HandleFunc("/api/database/test", handleDBTest)
+	http.HandleFunc("/api/rules/actions", gzipMiddleware(handleGetActions))
+	http.HandleFunc("/api/rules/role-actions", gzipMiddleware(handleGetRoleActions))
+	http.HandleFunc("/api/rules/export", gzipMiddleware(handleExportRules))
+	http.HandleFunc("/api/rules/users", gzipMiddleware(handleGetUsers))
+	http.HandleFunc("/api/rules/roles", gzipMiddleware(handleGetRoles))
+	http.HandleFunc("/api/rules/user-search", gzipMiddleware(handleUserSearch))
+	http.HandleFunc("/api/rules/user-permissions", gzipMiddleware(handleUserPermissions))
+	http.HandleFunc("/api/rules/role-permissions", gzipMiddleware(handleRolePermissions))
+	http.HandleFunc("/api/rules/check-permission", gzipMiddleware(handleCheckPermission))
 
 	// Try preferred port 9999 first
 	preferredPort := 9999
@@ -1695,43 +1776,704 @@ type ScanResult struct {
 }
 
 func handleHelperScanActive(w http.ResponseWriter, r *http.Request) {
-    if r.Method != "POST" {
-        http.Error(w, "Method not allowed", 405)
-        return
-    }
+	if r.Method != "POST" {
+		http.Error(w, "Method not allowed", 405)
+		return
+	}
 
-    var req struct {
-        Ports []int `json:"ports"`
-    }
-    if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-        http.Error(w, "Invalid request body", 400)
-        return
-    }
+	var req struct {
+		Ports []int `json:"ports"`
+	}
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		http.Error(w, "Invalid request body", 400)
+		return
+	}
 
-    var results []ScanResult
-    for _, port := range req.Ports {
-        res := ScanResult{Port: port, InUse: false}
-        
-        // Find PID and Process Name
-        cmd := exec.Command("lsof", fmt.Sprintf("-i:%d", port))
-        out, err := cmd.Output()
-        
-        if err == nil && len(out) > 0 {
-            lines := strings.Split(strings.TrimSpace(string(out)), "\n")
-            if len(lines) > 1 {
-                // Header is first line, take second line
-                // COMMAND PID USER ...
-                fields := strings.Fields(lines[1])
-                if len(fields) >= 2 {
-                    res.InUse = true
-                    res.Process = fields[0]
-                    res.PID = fields[1]
-                }
-            }
-        }
-        results = append(results, res)
-    }
+	var results []ScanResult
+	for _, port := range req.Ports {
+		res := ScanResult{Port: port, InUse: false}
 
-    w.Header().Set("Content-Type", "application/json")
-    json.NewEncoder(w).Encode(results)
+		// Find PID and Process Name
+		cmd := exec.Command("lsof", fmt.Sprintf("-i:%d", port))
+		out, err := cmd.Output()
+
+		if err == nil && len(out) > 0 {
+			lines := strings.Split(strings.TrimSpace(string(out)), "\n")
+			if len(lines) > 1 {
+				// Header is first line, take second line
+				// COMMAND PID USER ...
+				fields := strings.Fields(lines[1])
+				if len(fields) >= 2 {
+					res.InUse = true
+					res.Process = fields[0]
+					res.PID = fields[1]
+				}
+			}
+		}
+		results = append(results, res)
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(results)
+}
+
+// ===== Database Functions =====
+
+func getDBConnection() (*sql.DB, error) {
+	dbLock.Lock()
+	defer dbLock.Unlock()
+
+	if !config.Database.Enabled {
+		return nil, fmt.Errorf("Database not enabled in config")
+	}
+
+	// Return existing connection if alive
+	if db != nil {
+		if err := db.Ping(); err == nil {
+			return db, nil
+		}
+		db.Close()
+	}
+
+	// Create new connection
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?parseTime=true",
+		config.Database.Username,
+		config.Database.Password,
+		config.Database.Host,
+		config.Database.Port,
+		config.Database.Database,
+	)
+
+	var err error
+	db, err = sql.Open("mysql", dsn)
+	if err != nil {
+		return nil, fmt.Errorf("Failed to connect: %v", err)
+	}
+
+	// Test connection
+	if err = db.Ping(); err != nil {
+		db.Close()
+		db = nil
+		return nil, fmt.Errorf("Failed to ping database: %v", err)
+	}
+
+	// Set connection pool settings
+	db.SetMaxOpenConns(10)
+	db.SetMaxIdleConns(5)
+	db.SetConnMaxLifetime(5 * time.Minute)
+
+	return db, nil
+}
+
+func handleDBTest(w http.ResponseWriter, r *http.Request) {
+	conn, err := getDBConnection()
+	if err != nil {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"connected": false,
+			"error":     err.Error(),
+		})
+		return
+	}
+
+	// Test query
+	var version string
+	err = conn.QueryRow("SELECT VERSION()").Scan(&version)
+	if err != nil {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]interface{}{
+			"connected": false,
+			"error":     err.Error(),
+		})
+		return
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(map[string]interface{}{
+		"connected": true,
+		"version":   version,
+		"host":      config.Database.Host,
+		"database":  config.Database.Database,
+	})
+}
+
+func handleGetActions(w http.ResponseWriter, r *http.Request) {
+	conn, err := getDBConnection()
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+
+	query := `SELECT id, app_id, name, role_index, api_id, category_id
+	          FROM gp_auth_action
+	          ORDER BY id`
+
+	rows, err := conn.Query(query)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Query failed: %v", err), 500)
+		return
+	}
+	defer rows.Close()
+
+	var actions []AuthAction
+	for rows.Next() {
+		var a AuthAction
+		err := rows.Scan(&a.ID, &a.AppID, &a.Name, &a.RoleIndex, &a.ApiID, &a.CategoryID)
+		if err != nil {
+			http.Error(w, fmt.Sprintf("Scan failed: %v", err), 500)
+			return
+		}
+		actions = append(actions, a)
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(actions)
+}
+
+func handleGetRoleActions(w http.ResponseWriter, r *http.Request) {
+	conn, err := getDBConnection()
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+
+	query := `SELECT auth_role_id, action_id
+	          FROM gp_auth_role_action_ref
+	          ORDER BY auth_role_id, action_id`
+
+	rows, err := conn.Query(query)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Query failed: %v", err), 500)
+		return
+	}
+	defer rows.Close()
+
+	var roleActions []RoleActionRef
+	for rows.Next() {
+		var ra RoleActionRef
+		err := rows.Scan(&ra.AuthRoleID, &ra.ActionID)
+		if err != nil {
+			http.Error(w, fmt.Sprintf("Scan failed: %v", err), 500)
+			return
+		}
+		roleActions = append(roleActions, ra)
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(roleActions)
+}
+
+func handleExportRules(w http.ResponseWriter, r *http.Request) {
+	conn, err := getDBConnection()
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+
+	// Get actions
+	actionsQuery := `SELECT id, app_id, name, role_index, api_id, category_id
+	                 FROM gp_auth_action
+	                 ORDER BY id`
+	actionsRows, err := conn.Query(actionsQuery)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Query failed: %v", err), 500)
+		return
+	}
+	defer actionsRows.Close()
+
+	var actions []AuthAction
+	for actionsRows.Next() {
+		var a AuthAction
+		err := actionsRows.Scan(&a.ID, &a.AppID, &a.Name, &a.RoleIndex, &a.ApiID, &a.CategoryID)
+		if err != nil {
+			http.Error(w, fmt.Sprintf("Scan failed: %v", err), 500)
+			return
+		}
+		actions = append(actions, a)
+	}
+
+	// Get role-action refs
+	roleActionsQuery := `SELECT auth_role_id, action_id
+	                     FROM gp_auth_role_action_ref
+	                     ORDER BY auth_role_id, action_id`
+	roleActionsRows, err := conn.Query(roleActionsQuery)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Query failed: %v", err), 500)
+		return
+	}
+	defer roleActionsRows.Close()
+
+	var roleActions []RoleActionRef
+	for roleActionsRows.Next() {
+		var ra RoleActionRef
+		err := roleActionsRows.Scan(&ra.AuthRoleID, &ra.ActionID)
+		if err != nil {
+			http.Error(w, fmt.Sprintf("Scan failed: %v", err), 500)
+			return
+		}
+		roleActions = append(roleActions, ra)
+	}
+
+	// Combine and return
+	result := map[string]interface{}{
+		"actions":      actions,
+		"roleActions":  roleActions,
+		"totalActions": len(actions),
+		"totalRefs":    len(roleActions),
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(result)
+}
+
+// Get all users with their roles
+func handleGetUsers(w http.ResponseWriter, r *http.Request) {
+	conn, err := getDBConnection()
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+
+	// Query users with their roles
+	query := `
+		SELECT
+			u.id, u.login, u.email, u.first_name, u.last_name, u.activated,
+			GROUP_CONCAT(DISTINCT r.name SEPARATOR ', ') as roles
+		FROM gp_user u
+		LEFT JOIN gp_auth_user_role_ref ur ON u.id = ur.user_id
+		LEFT JOIN gp_auth_role r ON ur.role_id = r.id
+		GROUP BY u.id, u.login, u.email, u.first_name, u.last_name, u.activated
+		ORDER BY u.login
+	`
+
+	rows, err := conn.Query(query)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Query failed: %v", err), 500)
+		return
+	}
+	defer rows.Close()
+
+	var users []map[string]interface{}
+	for rows.Next() {
+		var id int
+		var activatedBit []byte
+		var login, email, firstName, lastName string
+		var roles *string
+
+		err := rows.Scan(&id, &login, &email, &firstName, &lastName, &activatedBit, &roles)
+		if err != nil {
+			http.Error(w, fmt.Sprintf("Scan failed: %v", err), 500)
+			return
+		}
+
+		// Convert bit(1) to bool
+		activated := len(activatedBit) > 0 && activatedBit[0] == 1
+
+		rolesStr := ""
+		if roles != nil {
+			rolesStr = *roles
+		}
+
+		users = append(users, map[string]interface{}{
+			"id":         id,
+			"login":      login,
+			"email":      email,
+			"first_name": firstName,
+			"last_name":  lastName,
+			"activated":  activated,
+			"roles":      rolesStr,
+		})
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(users)
+}
+
+// Get all roles with action counts
+func handleGetRoles(w http.ResponseWriter, r *http.Request) {
+	conn, err := getDBConnection()
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+
+	query := `
+		SELECT
+			r.id, r.name, r.activated, r.group_id,
+			COUNT(DISTINCT ra.action_id) as action_count
+		FROM gp_auth_role r
+		LEFT JOIN gp_auth_role_action_ref ra ON r.id = ra.auth_role_id
+		GROUP BY r.id, r.name, r.activated, r.group_id
+		ORDER BY r.name
+	`
+
+	rows, err := conn.Query(query)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Query failed: %v", err), 500)
+		return
+	}
+	defer rows.Close()
+
+	var roles []map[string]interface{}
+	for rows.Next() {
+		var id, actionCount int
+		var activatedBit []byte
+		var name string
+		var groupID *int
+
+		err := rows.Scan(&id, &name, &activatedBit, &groupID, &actionCount)
+		if err != nil {
+			http.Error(w, fmt.Sprintf("Scan failed: %v", err), 500)
+			return
+		}
+
+		// Convert bit(1) to bool
+		activated := len(activatedBit) > 0 && activatedBit[0] == 1
+
+		roles = append(roles, map[string]interface{}{
+			"id":           id,
+			"name":         name,
+			"activated":    activated,
+			"group_id":     groupID,
+			"action_count": actionCount,
+		})
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(roles)
+}
+
+// Search users by login or email (LIKE query)
+func handleUserSearch(w http.ResponseWriter, r *http.Request) {
+	conn, err := getDBConnection()
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+
+	searchQuery := r.URL.Query().Get("q")
+	if searchQuery == "" {
+		http.Error(w, "Missing search query parameter 'q'", 400)
+		return
+	}
+
+	// Use LIKE for partial matching
+	likePattern := "%" + searchQuery + "%"
+
+	query := `
+		SELECT
+			u.id, u.login, u.email, u.first_name, u.last_name, u.activated,
+			GROUP_CONCAT(DISTINCT r.name SEPARATOR ', ') as roles
+		FROM gp_user u
+		LEFT JOIN gp_auth_user_role_ref ur ON u.id = ur.user_id
+		LEFT JOIN gp_auth_role r ON ur.role_id = r.id
+		WHERE u.login LIKE ? OR u.email LIKE ? OR u.first_name LIKE ? OR u.last_name LIKE ?
+		GROUP BY u.id, u.login, u.email, u.first_name, u.last_name, u.activated
+		ORDER BY u.login
+		LIMIT 50
+	`
+
+	rows, err := conn.Query(query, likePattern, likePattern, likePattern, likePattern)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Query failed: %v", err), 500)
+		return
+	}
+	defer rows.Close()
+
+	var users []map[string]interface{}
+	for rows.Next() {
+		var id int
+		var activatedBit []byte
+		var login, email, firstName, lastName string
+		var roles *string
+
+		err := rows.Scan(&id, &login, &email, &firstName, &lastName, &activatedBit, &roles)
+		if err != nil {
+			http.Error(w, fmt.Sprintf("Scan failed: %v", err), 500)
+			return
+		}
+
+		// Convert bit(1) to bool
+		activated := len(activatedBit) > 0 && activatedBit[0] == 1
+
+		rolesStr := ""
+		if roles != nil {
+			rolesStr = *roles
+		}
+
+		users = append(users, map[string]interface{}{
+			"id":         id,
+			"login":      login,
+			"email":      email,
+			"first_name": firstName,
+			"last_name":  lastName,
+			"activated":  activated,
+			"roles":      rolesStr,
+		})
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(users)
+}
+
+// Get all permissions for a specific user
+func handleUserPermissions(w http.ResponseWriter, r *http.Request) {
+	conn, err := getDBConnection()
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+
+	userIDStr := r.URL.Query().Get("userId")
+	loginStr := r.URL.Query().Get("login")
+
+	var userID int
+	var query string
+	var args []interface{}
+
+	// Support both userId and login parameters
+	if userIDStr != "" {
+		userID, err = strconv.Atoi(userIDStr)
+		if err != nil {
+			http.Error(w, "Invalid userId parameter", 400)
+			return
+		}
+		query = `SELECT id, login, email, first_name, last_name, activated FROM gp_user WHERE id = ?`
+		args = []interface{}{userID}
+	} else if loginStr != "" {
+		query = `SELECT id, login, email, first_name, last_name, activated FROM gp_user WHERE login = ?`
+		args = []interface{}{loginStr}
+	} else {
+		http.Error(w, "Missing userId or login parameter", 400)
+		return
+	}
+
+	// Get user info
+	var user User
+	var activatedBit []byte
+	err = conn.QueryRow(query, args...).Scan(&user.ID, &user.Login, &user.Email, &user.FirstName, &user.LastName, &activatedBit)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("User not found: %v", err), 404)
+		return
+	}
+	user.Activated = len(activatedBit) > 0 && activatedBit[0] == 1
+
+	// Get user's roles
+	rolesQuery := `
+		SELECT DISTINCT r.name
+		FROM gp_auth_role r
+		INNER JOIN gp_auth_user_role_ref ur ON r.id = ur.role_id
+		WHERE ur.user_id = ?
+		ORDER BY r.name
+	`
+	rolesRows, err := conn.Query(rolesQuery, user.ID)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Failed to fetch roles: %v", err), 500)
+		return
+	}
+	defer rolesRows.Close()
+
+	var roles []string
+	for rolesRows.Next() {
+		var roleName string
+		rolesRows.Scan(&roleName)
+		roles = append(roles, roleName)
+	}
+
+	// Get user's actions through roles
+	actionsQuery := `
+		SELECT DISTINCT a.id, a.app_id, a.name, a.role_index, a.api_id, a.category_id
+		FROM gp_auth_action a
+		INNER JOIN gp_auth_role_action_ref ra ON a.id = ra.action_id
+		INNER JOIN gp_auth_user_role_ref ur ON ra.auth_role_id = ur.role_id
+		WHERE ur.user_id = ?
+		ORDER BY a.app_id, a.name
+	`
+	actionsRows, err := conn.Query(actionsQuery, user.ID)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Failed to fetch actions: %v", err), 500)
+		return
+	}
+	defer actionsRows.Close()
+
+	var actions []AuthAction
+	for actionsRows.Next() {
+		var action AuthAction
+		var categoryID *string
+		err := actionsRows.Scan(&action.ID, &action.AppID, &action.Name, &action.RoleIndex, &action.ApiID, &categoryID)
+		if err != nil {
+			http.Error(w, fmt.Sprintf("Scan failed: %v", err), 500)
+			return
+		}
+		if categoryID != nil {
+			action.CategoryID = *categoryID
+		}
+		actions = append(actions, action)
+	}
+
+	result := map[string]interface{}{
+		"user":         user,
+		"roles":        roles,
+		"actions":      actions,
+		"action_count": len(actions),
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(result)
+}
+
+// Get all permissions for a specific role
+func handleRolePermissions(w http.ResponseWriter, r *http.Request) {
+	conn, err := getDBConnection()
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+
+	roleIDStr := r.URL.Query().Get("roleId")
+	if roleIDStr == "" {
+		http.Error(w, "Missing roleId parameter", 400)
+		return
+	}
+
+	roleID, err := strconv.Atoi(roleIDStr)
+	if err != nil {
+		http.Error(w, "Invalid roleId parameter", 400)
+		return
+	}
+
+	// Get role info
+	var role Role
+	var activatedBit []byte
+	query := `SELECT id, name, activated, group_id FROM gp_auth_role WHERE id = ?`
+	err = conn.QueryRow(query, roleID).Scan(&role.ID, &role.Name, &activatedBit, &role.GroupID)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Role not found: %v", err), 404)
+		return
+	}
+	role.Activated = len(activatedBit) > 0 && activatedBit[0] == 1
+
+	// Get actions for this role
+	actionsQuery := `
+		SELECT a.id, a.app_id, a.name, a.role_index, a.api_id, a.category_id
+		FROM gp_auth_action a
+		INNER JOIN gp_auth_role_action_ref ra ON a.id = ra.action_id
+		WHERE ra.auth_role_id = ?
+		ORDER BY a.app_id, a.name
+	`
+	actionsRows, err := conn.Query(actionsQuery, roleID)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Failed to fetch actions: %v", err), 500)
+		return
+	}
+	defer actionsRows.Close()
+
+	var actions []AuthAction
+	for actionsRows.Next() {
+		var action AuthAction
+		var categoryID *string
+		err := actionsRows.Scan(&action.ID, &action.AppID, &action.Name, &action.RoleIndex, &action.ApiID, &categoryID)
+		if err != nil {
+			http.Error(w, fmt.Sprintf("Scan failed: %v", err), 500)
+			return
+		}
+		if categoryID != nil {
+			action.CategoryID = *categoryID
+		}
+		actions = append(actions, action)
+	}
+
+	result := map[string]interface{}{
+		"role":         role,
+		"actions":      actions,
+		"action_count": len(actions),
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(result)
+}
+
+// Check if a user has a specific permission
+func handleCheckPermission(w http.ResponseWriter, r *http.Request) {
+	conn, err := getDBConnection()
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+
+	userLogin := r.URL.Query().Get("user")
+	actionQuery := r.URL.Query().Get("action")
+
+	if userLogin == "" || actionQuery == "" {
+		http.Error(w, "Missing 'user' or 'action' parameter", 400)
+		return
+	}
+
+	// Get user info
+	var userID int
+	var userName, userEmail string
+	err = conn.QueryRow("SELECT id, login, email FROM gp_user WHERE login = ?", userLogin).Scan(&userID, &userName, &userEmail)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("User not found: %v", err), 404)
+		return
+	}
+
+	// Check if user has this permission (search in action name or api_id)
+	// Using LIKE for partial matching
+	likePattern := "%" + actionQuery + "%"
+
+	checkQuery := `
+		SELECT DISTINCT
+			a.id, a.app_id, a.name, a.role_index, a.api_id, a.category_id,
+			r.name as role_name
+		FROM gp_auth_action a
+		INNER JOIN gp_auth_role_action_ref ra ON a.id = ra.action_id
+		INNER JOIN gp_auth_user_role_ref ur ON ra.auth_role_id = ur.role_id
+		INNER JOIN gp_auth_role r ON ur.role_id = r.id
+		WHERE ur.user_id = ?
+		AND (a.name LIKE ? OR a.api_id LIKE ?)
+		ORDER BY a.name
+		LIMIT 100
+	`
+
+	rows, err := conn.Query(checkQuery, userID, likePattern, likePattern)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Query failed: %v", err), 500)
+		return
+	}
+	defer rows.Close()
+
+	type MatchedAction struct {
+		AuthAction
+		RoleName string `json:"role_name"`
+	}
+
+	var matchedActions []MatchedAction
+	for rows.Next() {
+		var action MatchedAction
+		var categoryID *string
+		err := rows.Scan(&action.ID, &action.AppID, &action.Name, &action.RoleIndex, &action.ApiID, &categoryID, &action.RoleName)
+		if err != nil {
+			http.Error(w, fmt.Sprintf("Scan failed: %v", err), 500)
+			return
+		}
+		if categoryID != nil {
+			action.CategoryID = *categoryID
+		}
+		matchedActions = append(matchedActions, action)
+	}
+
+	hasPermission := len(matchedActions) > 0
+
+	result := map[string]interface{}{
+		"user":            userName,
+		"user_email":      userEmail,
+		"action_query":    actionQuery,
+		"has_permission":  hasPermission,
+		"matched_count":   len(matchedActions),
+		"matched_actions": matchedActions,
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(result)
 }

@@ -88,7 +88,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     applyLanguage(currentLang);
     
     // Check for hash in URL, otherwise use saved tab
-    // Check for hash in URL, otherwise use saved tab
     const hash = window.location.hash.slice(1);
     if (hash && ['services', 'logs', 'tools', 'ports'].includes(hash)) {
         activeTab = hash;
@@ -105,6 +104,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     fetchAllStatus(); // Use batch endpoint on init
     connectWebSocket();
     enableDragAndDrop(); // Init Drag & Drop
+
+    // Add Enter key support for Port Scanner
+    const scanInput = document.getElementById('scan-ports-input');
+    if (scanInput) {
+        scanInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') scanPorts();
+        });
+    }
 
     // Optimized polling with Page Visibility API
     let pollingInterval = 60000; // 60s when active
@@ -662,16 +669,22 @@ async function switchMode(name, mode) {
     pendingRequests.set(requestKey, true);
 
     try {
-        await fetch('/api/services/mode', {
+        const res = await fetch('/api/services/mode', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, mode })
         });
 
+        if (!res.ok) {
+            const errText = await res.text();
+            throw new Error(errText || 'Request failed');
+        }
+
         // WebSocket will notify us of the update, no need to reload manually
     } catch (e) {
         console.error('Failed to switch mode:', e);
-        loadServices(); // Reload on error
+        showToast(e.message, 'error');
+        loadServices(); // Reload on error to revert optimistic UI
     } finally {
         // Remove from pending after 1s to allow new requests
         setTimeout(() => pendingRequests.delete(requestKey), 1000);
@@ -807,7 +820,11 @@ function connectWebSocket() {
                 return;
             }
             if (data.type === 'error') {
-                showToast(data.message, 'error', data.code);
+                if (data.code === 'CONSUL_BINARY_ERROR' && data.message.includes('exec format error')) {
+                    showToastWithAction(data.message, 'Consul Binary Error', '🛠️ Fix It', installConsul);
+                } else {
+                    showToast(data.message, 'error', data.code);
+                }
                 addLog(`❌ [Error] ${data.message}`);
                 return;
             }
@@ -1193,16 +1210,6 @@ async function loadPortStatus() {
             return;
         }
 
-        // Sort by service rank
-        data.sort((a, b) => {
-            const serviceA = services.find(s => s.name === a.service);
-            const serviceB = services.find(s => s.name === b.service);
-            const rankA = serviceA ? (serviceA.rank || 0) : 999;
-            const rankB = serviceB ? (serviceB.rank || 0) : 999;
-            if (rankA !== rankB) return rankA - rankB;
-            return a.service.localeCompare(b.service);
-        });
-
         const fragment = document.createDocumentFragment();
         
         data.forEach(item => {
@@ -1244,7 +1251,10 @@ async function loadPortStatus() {
                 </div>
                 ${item.inUse ? `
                     <div style="margin-top: 12px; display: flex; justify-content: flex-end;">
-                        <button onclick="killPort('${item.pid}', ${item.port})" class="btn-small" style="color: var(--accent-red); border-color: rgba(255,0,0,0.1); font-size: 0.7rem; padding: 2px 10px;">Kill Process</button>
+                        <button onclick="killPort('${item.pid}', ${item.port})" class="btn-small danger" style="color: var(--accent-red); border-color: rgba(255,0,0,0.1); font-size: 0.75rem; padding: 4px 10px; display: flex; align-items: center; gap: 6px;">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect></svg>
+                            Stop
+                        </button>
                     </div>
                 ` : ''}
             `;
@@ -1459,11 +1469,6 @@ async function scanPorts() {
     const resultsDiv = document.getElementById('scanner-results');
     const btnKillAll = document.getElementById('btn-kill-all');
     
-    // Add Enter key support
-    input.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') scanPorts();
-    });
-    
     // Clear previous results immediately to show loading state better
     const portsStr = input.value.trim();
     if (!portsStr) {
@@ -1522,8 +1527,9 @@ function renderScanResults() {
             <td class="pid-cell">${item.pid}</td>
             <td>${item.process || 'Unknown'}</td>
             <td>
-                <button onclick="killProcess('${item.pid}', ${item.port})" class="action-btn sm danger" title="Kill Process">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+                <button onclick="killProcess('${item.pid}', ${item.port})" class="action-btn sm danger" title="Stop Process" style="display: flex; align-items: center; gap: 6px; padding: 4px 10px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect></svg>
+                    <span style="font-weight: 500;">Stop</span>
                 </button>
             </td>
         `;
@@ -1580,3 +1586,57 @@ async function killAllProcesses() {
     showToast(`Batch kill completed. Killed ${successCount}/${activeItems.length} processes.`, 'success');
     scanPorts(); // Re-scan to verify
 }
+
+async function installConsul() {
+    if (!confirm('This will download and install the correct Consul binary for macOS. Continue?')) return;
+    
+    showToast('Downloading and installing Consul...', 'info');
+    
+    try {
+        const res = await fetch('/api/consul/install', { method: 'POST' });
+        const data = await res.json();
+        if (data.success) {
+            showToast('Consul installed successfully! You can now start it.', 'success');
+        } else {
+            showToast('Installation failed. Check logs.', 'error');
+        }
+    } catch (e) {
+        showToast('Error: ' + e.message, 'error');
+    }
+}
+
+function showToastWithAction(message, title, actionText, actionCallback) {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+
+    const toast = document.createElement('div');
+    toast.className = 'toast error'; // Use error style but with action
+    
+    toast.innerHTML = `
+        <div class="toast-content">
+            <div class="toast-title">${title}</div>
+            <div class="toast-message">${message}</div>
+            <button class="btn-small" id="toast-action-btn" style="margin-top:8px; background:white; color:var(--text-main); border:none;">${actionText}</button>
+        </div>
+        <button class="toast-close" onclick="this.parentElement.remove()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+    `;
+
+    container.appendChild(toast);
+    
+    document.getElementById('toast-action-btn').onclick = (e) => {
+        e.stopPropagation();
+        actionCallback();
+        toast.remove();
+    };
+
+    // Auto remove after 10s (longer for action)
+    setTimeout(() => {
+        if (toast.parentElement) {
+            toast.classList.add('closing');
+            setTimeout(() => toast.remove(), 300);
+        }
+    }, 10000);
+}
+
